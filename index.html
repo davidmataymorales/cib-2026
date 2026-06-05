@@ -119,27 +119,10 @@
             </div>
 
             <!-- Countdown -->
-            <div class="mt-16 max-w-md countdown-container p-8 rounded-3xl border border-white/30" data-aos="fade-up" data-aos-delay="200">
-                <div class="grid grid-cols-4 gap-6 text-center">
-                    <div>
-                        <div id="days" class="text-5xl font-bold">103</div>
-                        <div class="text-xs tracking-widest uppercase mt-1">Días</div>
-                    </div>
-                    <div>
-                        <div id="hours" class="text-5xl font-bold">09</div>
-                        <div class="text-xs tracking-widest uppercase mt-1">Horas</div>
-                    </div>
-                    <div>
-                        <div id="minutes" class="text-5xl font-bold">58</div>
-                        <div class="text-xs tracking-widest uppercase mt-1">Min</div>
-                    </div>
-                    <div>
-                        <div id="seconds" class="text-5xl font-bold">31</div>
-                        <div class="text-xs tracking-widest uppercase mt-1">Seg</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+			<div class="mt-16 max-w-md countdown-container p-8 rounded-3xl border border-white/30" data-aos="fade-up" data-aos-delay="200">
+				<div id="countdown-grid" class="grid grid-cols-3 gap-6 text-center">
+				</div>
+			</div>
 
         <div class="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center text-white/70 text-sm">
             Desplázate para descubrir
@@ -178,7 +161,7 @@
                     </div>
                 </div>
                 <div data-aos="fade-left">
-                    <img src="https://picsum.photos/id/1016/800/620" class="rounded-3xl shadow-2xl" alt="Biotecnología Bolivia">
+                    <img src="https://cosatravel.ch/wp-content/uploads/2023/08/bolivia-flamingo-landscape-nature-scaled.jpg" class="rounded-3xl shadow-2xl" alt="Biotecnología Bolivia">
 					<!--Quitar la division si no sirve-->
 					<div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-3xl shadow-xl">
                         <div class="flex items-center gap-x-4">
@@ -199,22 +182,100 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-4">Ejes Temáticos</h2>
+				<p class="max-w-md mx-auto text-zinc-600">Explora las áreas clave que definirán el futuro de la biotecnología en la región</p>
             </div>
+			<!-- Track 1 -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-white p-8 rounded-3xl hover:-translate-y-2 transition-all" data-aos="fade-up">
                     <div class="text-4xl mb-4">🌾</div>
-                    <h4 class="font-semibold text-xl mb-3">Biotecnología Agrícola</h4>
-                    <p class="text-zinc-600">Cultivos resilientes y seguridad alimentaria.</p>
+                    <h4 class="font-semibold text-xl mb-3">Biotecnología Agrícola y Alimentaria</h4>
+                    <p class="text-zinc-600">Mejora de cultivos, seguridad alimentaria y adaptación al cambio climático en los Andes y Amazonía.</p>
                 </div>
+				
+				<!-- Track 2 -->
                 <div class="bg-white p-8 rounded-3xl hover:-translate-y-2 transition-all" data-aos="fade-up" data-aos-delay="100">
                     <div class="text-4xl mb-4">🧬</div>
-                    <h4 class="font-semibold text-xl mb-3">Biotecnología Médica</h4>
-                    <p class="text-zinc-600">Salud y terapias avanzadas.</p>
+                    <h4 class="font-semibold text-xl mb-3">Biotecnología Médica y Salud</h4>
+                    <p class="text-zinc-600">Desarrollo de vacunas, terapias génicas y diagnóstico molecular para enfermedades endémicas.</p>
                 </div>
                 <div class="bg-white p-8 rounded-3xl hover:-translate-y-2 transition-all" data-aos="fade-up" data-aos-delay="200">
                     <div class="text-4xl mb-4">🌍</div>
-                    <h4 class="font-semibold text-xl mb-3">Bioeconomía</h4>
-                    <p class="text-zinc-600">Aprovechamiento sostenible de la biodiversidad.</p>
+                    <h4 class="font-semibold text-xl mb-3">Bioeconomía y Sostenibilidad</h4>
+                    <p class="text-zinc-600">Aprovechamiento sostenible de la megabiodiversidad boliviana para el desarrollo verde.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPEAKERS -->
+    <section id="speakers" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold heading-font">Ponentes Confirmados</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Speaker cards -->
+                <div class="group" data-aos="fade-up">
+                    <div class="aspect-square bg-zinc-200 rounded-3xl overflow-hidden mb-4">
+                        <img src="https://picsum.photos/id/64/400/400" class="w-full h-full object-cover group-hover:scale-105 transition-transform" alt="Dr. Elena Vargas">
+                    </div>
+                    <h5 class="font-semibold">Dra. Elena Vargas</h5>
+                    <p class="text-emerald-600 text-sm">CRISPR Therapeutics • Perú</p>
+                    <p class="text-xs text-zinc-500 mt-1">Edición genética en cultivos andinos</p>
+                </div>
+                
+                <div class="group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="aspect-square bg-zinc-200 rounded-3xl overflow-hidden mb-4">
+                        <img src="https://picsum.photos/id/201/400/400" class="w-full h-full object-cover group-hover:scale-105 transition-transform" alt="Dr. Carlos Mendoza">
+                    </div>
+                    <h5 class="font-semibold">Dr. Carlos Mendoza</h5>
+                    <p class="text-emerald-600 text-sm">Universidad de São Paulo • Brasil</p>
+                    <p class="text-xs text-zinc-500 mt-1">Bioeconomía amazónica</p>
+                </div>
+                
+                <div class="group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="aspect-square bg-zinc-200 rounded-3xl overflow-hidden mb-4">
+                        <img src="https://picsum.photos/id/1005/400/400" class="w-full h-full object-cover group-hover:scale-105 transition-transform" alt="Dra. Laura Choque">
+                    </div>
+                    <h5 class="font-semibold">Dra. Laura Choque</h5>
+                    <p class="text-emerald-600 text-sm">Universidad Mayor de San Andrés • Bolivia</p>
+                    <p class="text-xs text-zinc-500 mt-1">Biotecnología de quinoa</p>
+                </div>
+                
+                <div class="group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="aspect-square bg-zinc-200 rounded-3xl overflow-hidden mb-4">
+                        <img src="https://picsum.photos/id/669/400/400" class="w-full h-full object-cover group-hover:scale-105 transition-transform" alt="Prof. Michael Rivera">
+                    </div>
+                    <h5 class="font-semibold">Prof. Michael Rivera</h5>
+                    <p class="text-emerald-600 text-sm">MIT • EE.UU.</p>
+                    <p class="text-xs text-zinc-500 mt-1">Bioinformática y IA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAM -->
+    <section id="program" class="py-24 bg-zinc-900 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold heading-font text-center mb-16">Programa Preliminar</h2>
+            
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-zinc-800 p-8 rounded-3xl">
+                    <div class="text-emerald-400 font-medium mb-2">15 Sept</div>
+                    <h4 class="text-xl font-semibold mb-6">Día 1: Apertura e Innovación</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex gap-3"><span class="text-emerald-400">09:00</span> Ceremonia inaugural</li>
+                        <li class="flex gap-3"><span class="text-emerald-400">10:30</span> Keynote: Dra. Elena Vargas</li>
+                    </ul>
+                </div>
+                <!-- Repeat for other days -->
+                <div class="bg-zinc-800 p-8 rounded-3xl">
+                    <div class="text-emerald-400 font-medium mb-2">16 Sept</div>
+                    <h4 class="text-xl font-semibold mb-6">Día 2: Agricultura y Bioeconomía</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex gap-3"><span class="text-emerald-400">08:30</span> Panel de expertos</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -222,20 +283,87 @@
 
     <!-- REGISTRATION -->
     <section id="registration" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold mb-4">Inscripciones Abiertas</h2>
-            <button onclick="showRegisterModal()" 
-                    class="mt-8 bg-emerald-600 text-white px-12 py-6 rounded-3xl text-xl font-semibold hover:bg-emerald-700 transition-all">
-                Completar mi Registro
-            </button>
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center mb-16">
+                <h2 class="heading-font text-5xl font-bold mb-4">Inscripciones Abiertas</h2>
+                <p class="text-xl">Early Bird hasta el 30 de junio 2026</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto bg-zinc-100 rounded-3xl p-10">
+                <table class="w-full">
+                    <thead>
+                        <tr class="border-b">
+                            <th class="py-5 text-left">Categoría</th>
+                            <th class="py-5 text-center">Presencial</th>
+                            <th class="py-5 text-center">Virtual</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y">
+                        <tr>
+                            <td class="py-6 font-medium">Estudiantes</td>
+                            <td class="text-center">USD 120</td>
+                            <td class="text-center">USD 60</td>
+                        </tr>
+                        <tr>
+                            <td class="py-6 font-medium">Profesionales</td>
+                            <td class="text-center">USD 280</td>
+                            <td class="text-center">USD 140</td>
+                        </tr>
+                        <tr>
+                            <td class="py-6 font-medium">Early Bird (hasta 30/06)</td>
+                            <td class="text-center text-emerald-600 font-semibold">USD 220</td>
+                            <td class="text-center text-emerald-600 font-semibold">USD 110</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="mt-12 text-center">
+                    <button onclick="showRegisterModal()" 
+                            class="bg-gradient-to-r from-emerald-600 to-blue-700 text-white px-16 py-6 rounded-3xl text-xl font-semibold">
+                        Completar Registro
+                    </button>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-zinc-900 text-zinc-400 py-16">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-sm">© 2026 CIB - Congreso Internacional de Biotecnología</p>
-            <p class="text-xs mt-4">Santa Cruz de la Sierra, Bolivia</p>
+    <!-- FOOTER / CONTACT -->
+    <footer class="bg-zinc-900 text-zinc-400">
+        <div class="max-w-7xl mx-auto px-6 pt-20 pb-12">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center gap-x-3 text-white mb-6">
+                        <div class="w-9 h-9 bg-emerald-600 rounded-2xl flex items-center justify-center text-3xl">CIB</div>
+                        <span class="font-bold text-3xl">2026</span>
+                    </div>
+                    <p class="text-sm">Congreso Internacional de Biotecnología</p>
+                    <p class="text-xs mt-8">La Paz • Cochabamba • Bolivia</p>
+                </div>
+                
+                <div>
+                    <h5 class="font-semibold text-white mb-6">Contacto</h5>
+                    <p class="text-sm mb-2">info@cib2026.org</p>
+                    <p class="text-sm">+591 71548293</p>
+                </div>
+                
+                <div>
+                    <h5 class="font-semibold text-white mb-6">Redes Sociales</h5>
+                    <div class="flex gap-x-6 text-2xl">
+                        <i class="fa-brands fa-x-twitter hover:text-white cursor-pointer"></i>
+                        <i class="fa-brands fa-linkedin hover:text-white cursor-pointer"></i>
+                        <i class="fa-brands fa-instagram hover:text-white cursor-pointer"></i>
+                    </div>
+                </div>
+                
+                <div>
+                    <h5 class="font-semibold text-white mb-6">Organizado por</h5>
+                    <p class="text-sm">Bolivia Innova<br>Universidad Mayor de San Andrés<br>Cluster Biotecnología Bolivia</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-zinc-800 mt-16 pt-8 text-center text-xs">
+                © 2026 CIB - Congreso Internacional de Biotecnología. Todos los derechos reservados.
+            </div>
         </div>
     </footer>
 
@@ -243,15 +371,20 @@
     <div id="register-modal" class="hidden fixed inset-0 bg-black/70 z-[100] flex items-center justify-center">
         <div class="bg-white max-w-lg w-full mx-4 rounded-3xl p-10">
             <h3 class="text-3xl font-bold mb-8">Registro Rápido</h3>
-            <form class="space-y-6">
-                <input type="text" placeholder="Nombre completo" class="w-full px-6 py-4 border rounded-2xl focus:outline-none focus:border-emerald-600">
-                <input type="email" placeholder="Correo electrónico" class="w-full px-6 py-4 border rounded-2xl focus:outline-none focus:border-emerald-600">
+            <form id="register-form" class="space-y-6">
+                <input type="text" placeholder="Nombre completo" class="w-full px-6 py-4 border border-zinc-300 rounded-2xl focus:outline-none focus:border-emerald-600">
+                <input type="email" placeholder="Correo electrónico" class="w-full px-6 py-4 border border-zinc-300 rounded-2xl focus:outline-none focus:border-emerald-600">
+                <select class="w-full px-6 py-4 border border-zinc-300 rounded-2xl focus:outline-none focus:border-emerald-600">
+                    <option>Estudiante</option>
+                    <option>Profesional</option>
+                    <option>Investigador</option>
+                </select>
                 <button type="button" onclick="submitFakeForm()" 
-                        class="w-full bg-emerald-600 text-white py-6 rounded-3xl font-semibold">
+                        class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-6 rounded-3xl font-semibold">
                     Confirmar Inscripción
                 </button>
             </form>
-            <button onclick="hideRegisterModal()" class="mt-6 text-zinc-400 w-full">Cerrar</button>
+            <button onclick="hideRegisterModal()" class="mt-6 text-zinc-400 hover:text-zinc-600 w-full">Cerrar</button>
         </div>
     </div>
 
@@ -264,19 +397,74 @@
             document.getElementById('navbar').classList.toggle('nav-scrolled', window.scrollY > 50);
         });
 
-        // Countdown
-        function startCountdown() {
-            const targetDate = new Date('2026-12-21T09:00:00').getTime();
-            setInterval(() => {
-                const now = new Date().getTime();
-                const distance = targetDate - now;
-                
-                document.getElementById('days').textContent = Math.floor(distance / (1000 * 60 * 60 * 24));
-                document.getElementById('hours').textContent = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                document.getElementById('minutes').textContent = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                document.getElementById('seconds').textContent = Math.floor((distance % (1000 * 60)) / 1000);
-            }, 1000);
-        }
+        // Countdown Mejorado
+		function startCountdown() {
+			const targetDate = new Date('2026-12-21T09:00:00').getTime();
+			
+			const countdownGrid = document.getElementById('countdown-grid');
+			
+			setInterval(() => {
+				const now = new Date().getTime();
+				const distance = targetDate - now;
+				
+				if (distance < 0) {
+					countdownGrid.innerHTML = `<div class="col-span-3 text-2xl font-bold text-emerald-300">¡El evento ha comenzado!</div>`;
+					return;
+				}
+				
+				const totalDays = Math.floor(distance / (1000 * 60 * 60 * 24));
+				const months = Math.floor(totalDays / 30);           // Aproximación
+				const days = totalDays % 30;
+				const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+				const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+				let html = '';
+
+				if (months > 0) {
+					// Fase lejana: Meses | Días | Horas
+					html = `
+						<div>
+							<div class="text-5xl font-bold">${months}</div>
+							<div class="text-xs tracking-widest uppercase mt-1">Meses</div>
+						</div>
+						<div>
+							<div class="text-5xl font-bold">${days}</div>
+							<div class="text-xs tracking-widest uppercase mt-1">Días</div>
+						</div>
+						<div>
+							<div class="text-5xl font-bold">${hours}</div>
+							<div class="text-xs tracking-widest uppercase mt-1">Horas</div>
+						</div>
+					`;
+					countdownGrid.className = "grid grid-cols-3 gap-6 text-center";
+				} else {
+					// Fase cercana (diciembre): Días | Horas | Minutos | Segundos
+					html = `
+						<div>
+							<div class="text-5xl font-bold">${totalDays}</div>
+							<div class="text-xs tracking-widest uppercase mt-1">Días</div>
+						</div>
+						<div>
+							<div class="text-5xl font-bold">${hours}</div>
+							<div class="text-xs tracking-widest uppercase mt-1">Horas</div>
+						</div>
+						<div>
+							<div class="text-5xl font-bold">${minutes}</div>
+							<div class="text-xs tracking-widest uppercase mt-1">Min</div>
+						</div>
+						<div>
+							<div class="text-5xl font-bold">${seconds}</div>
+							<div class="text-xs tracking-widest uppercase mt-1">Seg</div>
+						</div>
+					`;
+					countdownGrid.className = "grid grid-cols-4 gap-6 text-center";
+				}
+				
+				countdownGrid.innerHTML = html;
+				
+			}, 1000);
+		}
 
         function showRegisterModal() {
             document.getElementById('register-modal').classList.remove('hidden');
