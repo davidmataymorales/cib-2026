@@ -75,19 +75,9 @@
             transition: all 0.5s ease;
         }
         
-        .scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 3px;
-            background: linear-gradient(to right, #00B4A6, #D4A017);
-            z-index: 50;
-        }
     </style>
 </head>
 <body class="tail-container bg-[#F8F5F0] text-[#1F2937] overflow-x-hidden">
-    <!-- Progress Bar -->
-    <div id="progress-bar" class="scroll-progress w-0"></div>
 
     <!-- NAVBAR -->
     <nav class="bg-white/95 backdrop-blur-md border-b border-[#E5D9C8] fixed w-full z-50 transition-all duration-300">
@@ -95,7 +85,6 @@
             <div class="px-8 py-5 flex items-center justify-between">
                 <!-- Logo -->
                 <div class="flex items-center gap-x-3">
-                    <img src="assets\logo.png" alt="BOLIVIA INNOVA" class="h-11 w-auto">
                     <div>
                         <span class="heading-font text-2xl font-bold tracking-tighter text-[#0A3D4A]">BOLIVIA</span>
                         <span class="heading-font text-2xl font-bold tracking-tighter text-[#00B4A6]">INNOVA</span>
@@ -104,8 +93,8 @@
 
                 <!-- Menu -->
                 <div class="hidden md:flex items-center gap-x-10 text-sm font-medium">
-                    <a href="#sobre" onclick="navigateToSection('sobre')" class="nav-link text-[#1F2937]">Sobre</a>
-                    <a href="#areas" onclick="navigateToSection('areas')" class="nav-link text-[#1F2937]">Áreas</a>
+                    <a href="#nosotros" onclick="navigateToSection('nosotros')" class="nav-link text-[#1F2937]">Quienes somos</a>
+                    <a href="#areas" onclick="navigateToSection('areas')" class="nav-link text-[#1F2937]">Áreas temáticas</a>
                     <a href="#ponentes" onclick="navigateToSection('ponentes')" class="nav-link text-[#1F2937]">Ponentes</a>
                     <a href="#programa" onclick="navigateToSection('programa')" class="nav-link text-[#1F2937]">Programa</a>
                     <a href="#registro" onclick="navigateToSection('registro')" class="nav-link text-[#1F2937]">Registro</a>
@@ -128,8 +117,8 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
             <div class="px-8 py-8 flex flex-col gap-y-6 text-lg">
-                <a href="#sobre" onclick="navigateToSection('sobre');toggleMobileMenu()" class="nav-link">Sobre el Congreso</a>
-                <a href="#areas" onclick="navigateToSection('areas');toggleMobileMenu()" class="nav-link">Áreas Temáticas</a>
+                <a href="#nosotros" onclick="navigateToSection('nosotros');toggleMobileMenu()" class="nav-link">Quienes somos</a>
+                <a href="#areas" onclick="navigateToSection('areas');toggleMobileMenu()" class="nav-link">Áreas temáticas</a>
                 <a href="#ponentes" onclick="navigateToSection('ponentes');toggleMobileMenu()" class="nav-link">Ponentes</a>
                 <a href="#programa" onclick="navigateToSection('programa');toggleMobileMenu()" class="nav-link">Programa</a>
                 <a href="#registro" onclick="navigateToSection('registro');toggleMobileMenu()" class="nav-link">Registro</a>
@@ -198,18 +187,9 @@
                 
                 <!-- Columna derecha - Imagen Gregor Mendel -->
                 <div class="md:col-span-5 relative hidden lg:flex justify-center lg:justify-end">
-                    <div class="relative max-w-[380px]">
+                    <div class="relative max-w-[760px]">
                         <img src="assets\page1.png" alt="Gregor Mendel" 
                             class="w-full rounded-3xl shadow-2xl">
-                        <div class="absolute -top-6 -right-6 bg-white rounded-2xl p-5 shadow-xl">
-                            <div class="flex items-center gap-x-3">
-                                <img src="assets\logo-min.png" alt="Logo" class="h-9">
-                                <div class="text-sm leading-tight">
-                                    <div class="font-semibold text-[#0A3D4A]">Bolivia Innova</div>
-                                    <div class="text-[#00B4A6]">2026</div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -228,14 +208,14 @@
     </header>
 
     <!-- SOBRE EL CONGRESO -->
-    <section id="sobre" class="py-12 md:py-16 bg-white">
+    <section id="nosotros" class="py-12 md:py-16 bg-white">
         <div class="max-w-screen-2xl mx-auto px-8">
             <div class="grid md:grid-cols-12 gap-16 items-center">
                 <div class="md:col-span-5">
                     <div class="sticky top-28">
                         <span class="inline-block px-4 py-1 bg-[#F0EDE4] text-[#0A3D4A] text-xs tracking-widest font-medium rounded-3xl">4º EDICIÓN - 2026</span>
                         <h2 class="heading-font text-6xl font-bold leading-none mt-6 mb-8 text-[#0A3D4A]">
-                            Uniendo ciencia, innovación y sostenibilidad en los Andes
+                            Uniendo ciencia, innovación y sostenibilidad en Bolivia
                         </h2>
                         <div class="h-px w-20 bg-gradient-to-r from-[#00B4A6] to-transparent"></div>
                     </div>
@@ -250,7 +230,7 @@
             
                     <div class="grid grid-cols-3 gap-8 mt-16">
                         <div>
-                            <div class="text-4xl font-mono font-semibold text-[#00B4A6]">30-50</div>
+                            <div class="text-4xl font-mono font-semibold text-[#00B4A6]">15-20</div>
                             <div class="text-sm uppercase tracking-widest mt-1">Ponentes</div>
                         </div>
                         <div>
@@ -258,7 +238,7 @@
                             <div class="text-sm uppercase tracking-widest mt-1">Ejes temáticos</div>
                         </div>
                         <div>
-                            <div class="text-4xl font-mono font-semibold text-[#00B4A6]">500-800</div>
+                            <div class="text-4xl font-mono font-semibold text-[#00B4A6]">150-200</div>
                             <div class="text-sm uppercase tracking-widest mt-1">Participantes</div>
                         </div>
                     </div>
@@ -319,7 +299,7 @@
         <div class="max-w-screen-2xl mx-auto px-8">
             <div class="max-w-4xl mx-auto text-center mb-12">
                 <h2 class="heading-font text-5xl md:text-6xl font-bold leading-none">Inscripciones Abiertas</h2>
-                <p class="text-xl text-white/80 mt-4">Early Bird hasta el 30 de agosto 2026</p>
+                <p class="text-xl text-white/80 mt-4">Descuento 20% Early Bird hasta el 30 de septiembre 2026</p>
             </div>
             
             <div class="max-w-4xl mx-auto bg-white/10 backdrop-blur-xl rounded-3xl p-10 md:p-12">
@@ -331,26 +311,26 @@
                             <th class="py-6 text-center font-normal text-white/70">Virtual</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-white/20">
+                    <tbody class="divide-y divide-white/20"> 
+                        <tr>
+                            <td class="py-7 font-medium">Profesionales</td>
+                            <td class="text-center">Bs. 350</td>
+                            <td class="text-center">Bs. 300</td>
+                        </tr>
                         <tr>
                             <td class="py-7 font-medium">Estudiantes</td>
-                            <td class="text-center">USD 180</td>
-                            <td class="text-center">USD 90</td>
-                        </tr>
-                        <tr>
-                            <td class="py-7 font-medium">Investigador / Académico</td>
-                            <td class="text-center">USD 420</td>
-                            <td class="text-center">USD 210</td>
-                        </tr>
-                        <tr>
-                            <td class="py-7 font-medium">Industry / Emprendedor</td>
-                            <td class="text-center">USD 650</td>
-                            <td class="text-center">USD 325</td>
+                            <td class="text-center">Bs. 250</td>
+                            <td class="text-center">Bs. 150</td>
                         </tr>
                         <tr class="bg-white/10">
-                            <td class="py-7 font-medium">Early Bird (hasta 30/08)</td>
-                            <td class="text-center text-[#D4A017] font-semibold">USD 520</td>
-                            <td class="text-center text-[#D4A017] font-semibold">USD 260</td>
+                            <td class="py-7 font-medium">Early Bird Profesionales (hasta 10/10/2026)</td>
+                            <td class="text-center text-[#D4A017] font-semibold">Bs. 280</td>
+                            <td class="text-center text-[#D4A017] font-semibold">Bs. 240</td>
+                        </tr>
+                        <tr class="bg-white/10">
+                            <td class="py-7 font-medium">Early Bird Estudiantes</td>
+                            <td class="text-center text-[#D4A017] font-semibold">Bs. 200</td>
+                            <td class="text-center text-[#D4A017] font-semibold">Bs. 120</td>
                         </tr>
                     </tbody>
                 </table>
@@ -393,7 +373,7 @@
         </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- Preguntas Frecuentes -->
     <section class="py-12 md:py-20 bg-[#F8F5F0]">
         <div class="max-w-screen-2xl mx-auto px-8">
             <div class="max-w-2xl mx-auto">
@@ -410,9 +390,9 @@
     <footer class="bg-[#0A3D4A] text-white">
         <div class="max-w-screen-2xl mx-auto px-8 pt-20 pb-12">
             <div class="grid md:grid-cols-12 gap-y-16">
+                <!-- Logo / Descripción -->
                 <div class="md:col-span-5">
                     <div class="flex items-center gap-x-3 mb-8">
-                        <img src="assets\logo.png" alt="Logo" class="h-12">
                         <span class="heading-font text-4xl font-bold tracking-tighter">BOLIVIA INNOVA</span>
                     </div>
                     <p class="max-w-xs text-white/70">
@@ -421,40 +401,50 @@
                     </p>
                 </div>
                 
+                <!-- Navegación -->
                 <div class="md:col-span-2">
-                    <div class="uppercase text-xs mb-6">Navegación</div>
+                    <div class="uppercase text-xs tracking-widest mb-6 text-white/60">Navegación</div>
                     <div class="space-y-3 text-sm">
-                        <a href="#sobre" class="block hover:text-[#00B4A6]">Sobre</a>
-                        <a href="#areas" class="block hover:text-[#00B4A6]">Áreas</a>
+                        <a href="#nosotros" class="block hover:text-[#00B4A6]">Quienes somos</a>
+                        <a href="#areas" class="block hover:text-[#00B4A6]">Áreas temáticas</a>
                         <a href="#ponentes" class="block hover:text-[#00B4A6]">Ponentes</a>
+                        <a href="#programa" class="block hover:text-[#00B4A6]">Programa</a>
                     </div>
                 </div>
                 
-                <div class="md:col-span-2">
-                    <div class="uppercase text-xs mb-6">Contacto</div>
-                    <div class="space-y-3 text-sm">
-                        <a href="#" class="block hover:text-[#00B4A6]">info@bioinnovabolivia.org</a>
-                        <a href="#" class="block hover:text-[#00B4A6]">+591 2 1234567</a>
-                    </div>
-                </div>
-                
+                <!-- Contacto -->
                 <div class="md:col-span-3">
-                    <div class="uppercase text-xs mb-6">Síguenos</div>
+                    <div class="uppercase text-xs tracking-widest mb-6 text-white/60">Contacto</div>
+                    <div class="space-y-3 text-sm">
+                        <a href="mailto:congresoboliviainnova@gmail.com" class="block hover:text-[#00B4A6]">
+                            congresoboliviainnova@gmail.com
+                        </a>
+                        <a href="tel:+33687943914" class="block hover:text-[#00B4A6]">
+                            +33 0687943914
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Síguenos -->
+                <div class="md:col-span-2">
+                    <div class="uppercase text-xs tracking-widest mb-6 text-white/60">Síguenos</div>
                     <div class="flex gap-x-6 text-3xl">
-                        <i class="fa-brands fa-x-twitter hover:text-[#00B4A6] cursor-pointer"></i>
-                        <i class="fa-brands fa-linkedin hover:text-[#00B4A6] cursor-pointer"></i>
-                        <i class="fa-brands fa-instagram hover:text-[#00B4A6] cursor-pointer"></i>
+                        <a href="#" class="hover:text-[#00B4A6] transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="hover:text-[#00B4A6] transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-[#00B4A6] transition-colors"><i class="fa-brands fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
             
+            <!-- Línea inferior -->
             <div class="border-t border-white/10 mt-20 pt-8 text-xs flex flex-col md:flex-row justify-between items-center text-white/50">
-                <div>© 2026 Congreso Internacional de Biotecnología Bolivia. Todos los derechos reservados.</div>
+                <div>© Bolivia Innova - Congreso Internacional de Biotecnología 2026. Todos los derechos reservados.</div>
                 <div class="mt-4 md:mt-0">Hecho con respeto por la ciencia y la naturaleza</div>
             </div>
         </div>
     </footer>
 
+    <!----Scripts en JS---->
     <script>
         // Tailwind script already loaded
         
@@ -462,7 +452,7 @@
             // Already configured via CDN
         }
         
-        // Sample data
+        // Descripción de áreas temáticas
         const areas = [
             {
                 title: "Biotecnología Agrícola",
@@ -496,6 +486,7 @@
             }
         ]
         
+        // Descripción de los ponentes
         const speakers = [
             {
                 name: "Dra. Elena Vargas",
@@ -523,6 +514,7 @@
             }
         ]
         
+        // Desarrollo de las preguntas frecuentes
         const faqs = [
             {
                 q: "¿Cuáles son las fechas del congreso?",
@@ -538,7 +530,7 @@
             }
         ]
         
-        // Render Areas
+        // Render de boxes de áreas temáticas
         function renderAreas() {
             const container = document.getElementById("areas-grid")
             container.innerHTML = ""
@@ -555,7 +547,7 @@
             })
         }
         
-        // Render Speakers
+        // Render de boxes de ponentes
         function renderSpeakers() {
             const container = document.getElementById("speakers-grid")
             container.innerHTML = ""
@@ -575,7 +567,7 @@
             })
         }
         
-        // Render FAQs
+        // Render de boxes de preguntas frecuentes
         function renderFAQs() {
             const container = document.getElementById("faq-container")
             container.innerHTML = ""
@@ -600,9 +592,9 @@
             })
         }
         
-        // Countdown
+        // Contador de tiempo antes del congreso
         function startCountdown() {
-            // Fecha del congreso: 10 de Diciembre 2026 a las 09:00 (hora local)
+            // Fecha (preliminar) del congreso: 10 de Diciembre 2026 a las 09:00 (hora local)
             const targetDate = new Date("2026-12-10T09:00:00").getTime();
 
             function updateCountdown() {
@@ -634,23 +626,13 @@
             setInterval(updateCountdown, 60000);
         }
         
-        // Progress bar
-        function setupProgressBar() {
-            window.addEventListener('scroll', () => {
-                const winScroll = document.body.scrollTop || document.documentElement.scrollTop
-                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight
-                const scrolled = (winScroll / height) * 100
-                document.getElementById("progress-bar").style.width = scrolled + "%"
-            })
-        }
-        
-        // Mobile menu
+        // Render del menú del celular
         function toggleMobileMenu() {
             const menu = document.getElementById("mobile-menu")
             menu.classList.toggle("hidden")
         }
         
-        // Smooth navigation
+        // Integrar navegación suave
         function navigateToSection(section) {
             const el = document.getElementById(section)
             if (el) {
@@ -658,11 +640,7 @@
             }
         }
         
-        function submitAbstract() {
-            alert("✅ Resumen enviado correctamente. Recibirás una confirmación en tu correo electrónico. (Demostración)")
-        }
-        
-        // Keyboard accessibility
+        // Accesibilidad de teclado
         function setupKeyboard() {
             document.addEventListener('keydown', function(e) {
                 if (e.key === "/" && document.activeElement.tagName !== "INPUT" && document.activeElement.tagName !== "TEXTAREA") {
@@ -673,17 +651,16 @@
             })
         }
         
-        // Main initialization
+        // Inicialización de todo 
         function init() {
             initializeTailwind()
             renderAreas()
             renderSpeakers()
             renderFAQs()
             startCountdown()
-            setupProgressBar()
             setupKeyboard()
             
-            // Navbar scroll effect
+            // Efecto de sombra de la barra de navegación
             window.addEventListener('scroll', () => {
                 const nav = document.querySelector('nav')
                 if (window.scrollY > 80) {
@@ -693,10 +670,10 @@
                 }
             })
             
-            console.log('%c✅ Sitio web del Congreso Internacional de Biotecnología 2026 cargado con éxito', 'color:#00B4A6; font-family:monospace')
+            console.log('Sitio web cargado con éxito', 'color:#00B4A6; font-family:monospace')
         }
         
-        // Boot the site
+        // Bootear el sitio
         window.onload = init
     </script>
 </body>
