@@ -2,6 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Congreso Internacional de Biotecnología 2026 | Bolivia</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -82,38 +84,49 @@
     <!-- NAVBAR -->
     <nav class="bg-white/95 backdrop-blur-md border-b border-[#E5D9C8] fixed w-full z-50 transition-all duration-300">
         <div class="max-w-screen-2xl mx-auto">
-            <div class="px-8 py-5 flex items-center justify-between">
+            <div class="px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+                
                 <!-- Logo -->
-                <div class="flex items-center gap-x-3">
+                <div class="flex items-center gap-x-2">
                     <div>
-                        <span class="heading-font text-2xl font-bold tracking-tighter text-[#0A3D4A]">BOLIVIA</span>
-                        <span class="heading-font text-2xl font-bold tracking-tighter text-[#00B4A6]">INNOVA</span>
+                        <span class="heading-font text-2xl sm:text-3xl font-bold tracking-tighter text-[#0A3D4A]">BOLIVIA</span>
+                        <span class="heading-font text-2xl sm:text-3xl font-bold tracking-tighter text-[#00B4A6]">INNOVA</span>
                     </div>
                 </div>
 
-                <!-- Menu -->
-                <div class="hidden md:flex items-center gap-x-10 text-sm font-medium">
-                    <a href="#nosotros" onclick="navigateToSection('nosotros')" class="nav-link text-[#1F2937]">Quienes somos</a>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                    <a href="#nosotros" onclick="navigateToSection('nosotros')" class="nav-link text-[#1F2937]">Quiénes somos</a>
                     <a href="#areas" onclick="navigateToSection('areas')" class="nav-link text-[#1F2937]">Áreas temáticas</a>
                     <a href="#ponentes" onclick="navigateToSection('ponentes')" class="nav-link text-[#1F2937]">Ponentes</a>
                     <a href="#programa" onclick="navigateToSection('programa')" class="nav-link text-[#1F2937]">Programa</a>
                     <a href="#registro" onclick="navigateToSection('registro')" class="nav-link text-[#1F2937]">Registro</a>
                 </div>
 
-                <div class="flex items-center gap-x-4">
+                <!-- Botones lado derecho -->
+                <div class="flex items-center gap-x-3">
+                    <!-- Botón Registrarse (más pequeño en móvil) -->
                     <button onclick="window.location.href='#registro'" 
-                            class="px-6 py-3 bg-[#0A3D4A] hover:bg-[#1F2937] text-white text-sm font-semibold rounded-2xl transition-all flex items-center gap-x-2">
+                            class="hidden sm:flex px-5 py-2.5 bg-[#0A3D4A] hover:bg-[#1F2937] text-white text-sm font-semibold rounded-2xl transition-all items-center gap-x-2">
                         <i class="fa-solid fa-ticket"></i>
                         <span>Registrarse</span>
                     </button>
+
+                    <!-- Botón pequeño solo en móvil -->
+                    <button onclick="window.location.href='#registro'" 
+                            class="sm:hidden px-4 py-2 bg-[#0A3D4A] hover:bg-[#1F2937] text-white text-sm font-semibold rounded-2xl transition-all">
+                        <i class="fa-solid fa-ticket"></i>
+                    </button>
+
+                    <!-- Hamburger Menu -->
                     <button onclick="toggleMobileMenu()" 
-                            class="md:hidden w-11 h-11 flex items-center justify-center text-2xl text-[#0A3D4A]">
+                            class="md:hidden w-10 h-10 flex items-center justify-center text-2xl text-[#0A3D4A]">
                         <i class="fa-solid fa-bars"></i>
                     </button>
                 </div>
             </div>
         </div>
-        
+
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
             <div class="px-8 py-8 flex flex-col gap-y-6 text-lg">
@@ -126,100 +139,108 @@
         </div>
     </nav>
 
+ 
     <!-- HERO -->
-    <header id="hero" class="hero-bg min-h-screen flex items-center relative overflow-hidden">
-        <!-- Background illustrations -->
-        <img src="assets\lateral1.png" alt="" 
+    <header id="hero" class="hero-bg min-h-screen flex flex-col items-center relative overflow-hidden">
+
+        <!--Background illustrations-->
+        <img src="assets/lateral1.png" alt="" 
             class="absolute top-20 left-10 w-48 opacity-10 illustration-float hidden lg:block" style="animation-delay: 0s;">
-        <img src="assets\lateral2.png" alt="" 
+        <img src="assets/lateral2.png" alt="" 
             class="absolute bottom-32 right-12 w-64 opacity-10 illustration-float hidden lg:block" style="animation-delay: 8s;">
-        
-        <div class="max-w-screen-2xl mx-auto px-8 pt-28 pb-16 relative z-10">
-            <div class="grid md:grid-cols-12 gap-12 items-center">
-                <!-- Columna izquierda -->
-                <div class="md:col-span-7">
-                    <div class="inline-flex items-center gap-x-2 bg-white/10 backdrop-blur-md text-white text-sm font-medium px-5 py-2 rounded-3xl mb-6">
-                        <div class="w-2 h-2 bg-[#00B4A6] rounded-full animate-pulse"></div>
-                        10 — 12 de Diciembre 2026 • Santa Cruz, Bolivia
-                    </div>
+
+        <!-- Contenido principal -->
+        <div class="flex-1 flex items-center pt-20 pb-8 md:pt-24 md:pb-12">
+            <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+                <div class="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
                     
-                    <h1 class="heading-font text-6xl md:text-7xl lg:text-8xl font-bold leading-none text-white tracking-tighter mb-6">
-                        BIOINNOVACIÓN<br>QUE TRANSFORMA
-                    </h1>
-                    
-                    <p class="text-xl md:text-2xl text-white/90 max-w-lg mb-10">
-                        El Congreso Internacional de Biotecnología 2026 reúne a los líderes bolivianos en investigación científica, 
-                        emprendimiento y regulación para el desarrollo de la región.
-                    </p>
-                    
-                    <!-- Botones -->
-                    <div class="flex flex-wrap gap-4 mb-12">
-                        <button onclick="document.getElementById('registro').scrollIntoView({ behavior: 'smooth' })" 
-                                class="px-8 py-4 bg-white text-[#0A3D4A] hover:bg-[#D4A017] hover:text-white text-lg font-semibold rounded-3xl transition-all flex items-center gap-x-3 group">
-                            <span>Registrarse ahora</span>
-                            <i class="fa-solid fa-arrow-right group-active:rotate-45 transition-transform"></i>
-                        </button>
-                        
-                        <button onclick="document.getElementById('programa').scrollIntoView({ behavior: 'smooth' })" 
-                                class="px-8 py-4 border-2 border-white/70 hover:border-white text-white text-lg font-medium rounded-3xl transition-all">
-                            Ver programa
-                        </button>
-                    </div>
-                    
-                    <!-- Countdown -->
-                    <div class="flex items-center gap-x-10 text-white">
-                        <div class="text-center">
-                            <div id="days" class="text-5xl md:text-6xl font-mono font-bold"></div>
-                            <div class="text-xs tracking-widest uppercase mt-1">Días</div>
+                    <!-- Columna izquierda -->
+                    <div class="md:col-span-7">
+                        <div class="inline-flex items-center gap-x-2 bg-white/10 backdrop-blur-md text-white text-sm font-medium px-5 py-2 rounded-3xl mb-6">
+                            <div class="w-2 h-2 bg-[#00B4A6] rounded-full animate-pulse"></div>
+                            10 — 12 de Diciembre 2026 • Santa Cruz, Bolivia
                         </div>
-                        <div class="h-12 w-px bg-white/30"></div>
-                        <div class="text-center">
-                            <div id="hours" class="text-5xl md:text-6xl font-mono font-bold"></div>
-                            <div class="text-xs tracking-widest uppercase mt-1">Horas</div>
+
+                        <h1 class="heading-font text-5xl xs:text-[42px] sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.05] text-white tracking-tighter mb-6">
+                            BIOINNOVACIÓN<br>QUE TRANSFORMA
+                        </h1>
+
+                        <p class="text-lg sm:text-xl md:text-2xl text-white/90 max-w-lg mb-10">
+                            El Congreso Internacional de Biotecnología 2026 reúne a los líderes bolivianos en investigación científica, 
+                            emprendimiento y regulación para el desarrollo de la región.
+                        </p>
+
+                        <!-- Botones -->
+                        <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                            <button onclick="document.getElementById('registro').scrollIntoView({ behavior: 'smooth' })" 
+                                    class="px-8 py-4 bg-white text-[#0A3D4A] hover:bg-[#D4A017] hover:text-white text-lg font-semibold rounded-3xl transition-all flex items-center justify-center gap-x-3">
+                                <span>Registrarse ahora</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+
+                            <button onclick="document.getElementById('programa').scrollIntoView({ behavior: 'smooth' })" 
+                                    class="px-8 py-4 border-2 border-white/70 hover:border-white text-white text-lg font-medium rounded-3xl transition-all">
+                                Ver programa
+                            </button>
                         </div>
-                        <div class="h-12 w-px bg-white/30"></div>
-                        <div class="text-center">
-                            <div id="minutes" class="text-5xl md:text-6xl font-mono font-bold"></div>
-                            <div class="text-xs tracking-widest uppercase mt-1">Minutos</div>
+
+                        <!-- Countdown -->
+                        <div class="flex justify-center md:justify-start gap-x-6 md:gap-x-10 text-white mt-6 md:mt-0">
+                            <div class="text-center">
+                                <div id="days" class="text-4xl sm:text-5xl md:text-6xl font-mono font-bold"></div>
+                                <div class="text-[10px] sm:text-xs tracking-widest uppercase mt-1">Días</div>
+                            </div>
+                            <div class="h-10 sm:h-12 w-px bg-white/30 self-end mb-1"></div>
+                            
+                            <div class="text-center">
+                                <div id="hours" class="text-4xl sm:text-5xl md:text-6xl font-mono font-bold"></div>
+                                <div class="text-[10px] sm:text-xs tracking-widest uppercase mt-1">Horas</div>
+                            </div>
+                            <div class="h-10 sm:h-12 w-px bg-white/30 self-end mb-1"></div>
+                            
+                            <div class="text-center">
+                                <div id="minutes" class="text-4xl sm:text-5xl md:text-6xl font-mono font-bold"></div>
+                                <div class="text-[10px] sm:text-xs tracking-widest uppercase mt-1">Minutos</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Columna derecha - Imagen Gregor Mendel -->
-                <div class="md:col-span-5 relative hidden lg:flex justify-center lg:justify-end">
-                    <div class="relative max-w-[760px]">
-                        <img src="assets\page1.png" alt="Gregor Mendel" 
-                            class="w-full rounded-3xl shadow-2xl">
+
+                    <!-- Imagen Gregor Mendel -->
+                    <div class="md:col-span-5 relative hidden lg:flex justify-center lg:justify-end">
+                        <div class="relative max-w-[760px]">
+                            <img src="assets/page1.png" alt="Gregor Mendel" class="w-full rounded-3xl shadow-2xl">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <!-- Scroll indicator -->
-        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center text-white/70 text-xs tracking-widest z-10">
+
+        <!-- Scroll indicator - Solo desktop -->
+        <div class="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center text-white/70 text-xs tracking-widest z-10">
             <div class="mb-2">DESCUBRE MÁS</div>
             <i class="fa-solid fa-chevron-down animate-bounce text-2xl"></i>
         </div>
-    </header>
         
-        
-        <!-- Floating natural elements -->
-        <img src="assets\lateral1.png" alt="" class="absolute top-1/4 -left-20 w-40 rotate-12 opacity-20 pointer-events-none hidden xl:block">
+        <!-- Floating natural elements
+        <img src="assets/lateral1.png" alt="" class="absolute top-1/4 -left-20 w-40 rotate-12 opacity-20 pointer-events-none hidden xl:block">
+        -->
     </header>
 
     <!-- SOBRE EL CONGRESO -->
-    <section id="nosotros" class="py-12 md:py-16 bg-white">
+    <section id="nosotros" class="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+
         <div class="max-w-screen-2xl mx-auto px-8">
             <div class="grid md:grid-cols-12 gap-16 items-center">
                 <div class="md:col-span-5">
-                    <div class="sticky top-28">
-                        <span class="inline-block px-4 py-1 bg-[#F0EDE4] text-[#0A3D4A] text-xs tracking-widest font-medium rounded-3xl">4º EDICIÓN - 2026</span>
-                        <h2 class="heading-font text-6xl font-bold leading-none mt-6 mb-8 text-[#0A3D4A]">
-                            Uniendo ciencia, innovación y sostenibilidad en Bolivia
-                        </h2>
-                        <div class="h-px w-20 bg-gradient-to-r from-[#00B4A6] to-transparent"></div>
-                    </div>
+                <div class="sticky top-28">
+                    <span class="inline-block px-4 py-1 bg-[#F0EDE4] text-[#0A3D4A] text-xs tracking-widest font-medium rounded-3xl">4º EDICIÓN - 2026</span>
+                    
+                    <h2 class="heading-font text-5xl xs:text-[42px] sm:text-6xl md:text-7xl font-bold leading-none mt-6 mb-4 md:mb-8 text-[#0A3D4A]">
+                        Uniendo ciencia, innovación y sostenibilidad en Bolivia
+                    </h2>
+                    <div class="h-px w-20 bg-gradient-to-r from-[#00B4A6] to-transparent"></div>
                 </div>
+            </div>
                 
                 <div class="md:col-span-7 max-w-2xl">
                     <p class="text-lg leading-relaxed text-[#374151]">
@@ -228,18 +249,20 @@
                         fundamental de la biotecnología en la solución de los grandes desafíos de América Latina. 
                     </p>
             
-                    <div class="grid grid-cols-3 gap-8 mt-16">
-                        <div>
-                            <div class="text-4xl font-mono font-semibold text-[#00B4A6]">15-20</div>
-                            <div class="text-sm uppercase tracking-widest mt-1">Ponentes</div>
+                    <div class="grid grid-cols-3 gap-4 sm:gap-6 md:gap-8 mt-12 md:mt-16">
+                        <div class="text-center">
+                            <div class="text-3xl sm:text-4xl font-mono font-semibold text-[#00B4A6] leading-none whitespace-nowrap">15-20</div>
+                            <div class="text-xs sm:text-sm uppercase tracking-widest mt-2 text-[#374151]">Ponentes</div>
                         </div>
-                        <div>
-                            <div class="text-4xl font-mono font-semibold text-[#00B4A6]">6</div>
-                            <div class="text-sm uppercase tracking-widest mt-1">Ejes temáticos</div>
+                        
+                        <div class="text-center">
+                            <div class="text-3xl sm:text-4xl font-mono font-semibold text-[#00B4A6] leading-none">6</div>
+                            <div class="text-xs sm:text-sm uppercase tracking-widest mt-2 text-[#374151]">Ejes temáticos</div>
                         </div>
-                        <div>
-                            <div class="text-4xl font-mono font-semibold text-[#00B4A6]">150-200</div>
-                            <div class="text-sm uppercase tracking-widest mt-1">Participantes</div>
+                        
+                        <div class="text-center">
+                            <div class="text-2xl sm:text-3xl md:text-4xl font-mono font-semibold text-[#00B4A6] leading-none whitespace-nowrap">150-200</div>
+                            <div class="text-xs sm:text-sm uppercase tracking-widest mt-2 text-[#374151]">Participantes</div>
                         </div>
                     </div>
                 </div>
@@ -248,7 +271,7 @@
     </section>
 
     <!-- ÁREAS TEMÁTICAS -->
-    <section id="areas" class="py-12 md:py-20 bg-[#F8F5F0]">
+    <section id="areas" class="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-[#F8F5F0]">
         <div class="max-w-screen-2xl mx-auto px-8">
             <div class="text-center mb-16">
                 <span class="text-[#00B4A6] font-medium">EXPLORA</span>
@@ -262,27 +285,28 @@
     </section>
 
     <!-- PONENTES -->
-    <section id="ponentes" class="py-12 md:py-20 bg-white">
+    <section id="ponentes" class="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div class="max-w-screen-2xl mx-auto px-8">
-            <div class="flex justify-between items-end mb-16">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-end gap-4 md:gap-0 mb-16">
                 <div>
                     <span class="text-[#00B4A6]">INSPIRACIÓN CIENTÍFICA</span>
-                    <h2 class="heading-font text-5xl font-bold">Ponentes Confirmados</h2>
+                    <h2 class="heading-font text-5xl xs:text-[42px] sm:text-6xl md:text-7xl lg:text-8xl font-bold">Ponentes Confirmados</h2>
                 </div>
-                <a href="#" class="text-[#00B4A6] flex items-center gap-x-2 group">
+                <a href="#" class="text-[#00B4A6] flex items-center gap-x-2 group md:text-right">
                     Ver todos 
                     <span class="transition-transform group-hover:translate-x-1">→</span>
                 </a>
             </div>
-            
+                    
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8" id="speakers-grid">
                 <!-- Populated by JS -->
             </div>
         </div>
     </section>
+    
 
     <!-- PROGRAMA -->
-    <section id="programa" class="py-12 md:py-20 bg-[#F8F5F0]">
+    <section id="programa" class="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-[#F8F5F0]">
         <div class="max-w-screen-2xl mx-auto px-8">
             <div class="max-w-2xl mx-auto text-center mb-16">
                 <h2 class="heading-font text-5xl font-bold mb-4">Programa Científico</h2>
@@ -295,7 +319,7 @@
     </section>
 
     <!-- REGISTRO -->
-    <section id="registro" class="py-16 md:py-24 bg-[#0A3D4A] text-white">
+    <section id="registro" class="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-[#0A3D4A] text-white">
         <div class="max-w-screen-2xl mx-auto px-8">
             <div class="max-w-4xl mx-auto text-center mb-12">
                 <h2 class="heading-font text-5xl md:text-6xl font-bold leading-none">Inscripciones Abiertas</h2>
@@ -346,7 +370,7 @@
     </section>
 
     <!-- ORGANIZADORES Y PATROCINADORES -->
-    <section class="py-28 bg-white">
+    <section class="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div class="max-w-screen-2xl mx-auto px-8">
             <div class="grid md:grid-cols-2 gap-20">
                 <!-- Organizadores -->
@@ -374,8 +398,8 @@
     </section>
 
     <!-- Preguntas Frecuentes -->
-    <section class="py-12 md:py-20 bg-[#F8F5F0]">
-        <div class="max-w-screen-2xl mx-auto px-8">
+    <section class="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-[#F8F5F0]">
+        <div class="max-w-2xl mx-auto">
             <div class="max-w-2xl mx-auto">
                 <h2 class="heading-font text-5xl font-bold text-center mb-16">Preguntas Frecuentes</h2>
                 
@@ -574,11 +598,11 @@
             
             faqs.forEach((faq, index) => {
                 const div = document.createElement("div")
-                div.className = "bg-white border border-transparent rounded-3xl p-8 cursor-pointer"
+                div.className = "bg-white border border-transparent rounded-3xl p-6 sm:p-8 mx-auto max-w-xl cursor-pointer"
                 div.innerHTML = `
                     <div class="flex justify-between items-center">
                         <div class="font-medium">${faq.q}</div>
-                        <i class="fa-solid fa-chevron-down transition-transform"></i>
+                        <i class="fa-solid fa-chevron-down transition-transform flex-shrink-0"></i>
                     </div>
                     <div class="faq-answer hidden mt-6 text-[#64748B]">${faq.a}</div>
                 `
