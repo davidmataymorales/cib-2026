@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@400;500;600&amp;display=swap');
+    
+    :root {
+        --primary: #0A3D4A;
+        --accent: #00B4A6;
+        --gold: #D4A017;
+        --coral: #E07A5F;
+    }
+    
+    .tail-container {
+        font-family: 'Inter', system_ui, sans-serif;
+    }
+    
+    .heading-font {
+        font-family: 'Playfair Display', sans-serif;
+    }
+
+    .hero-bg {
+        background: linear-gradient(135deg, #0A3D4A 0%, #1A5C6E 100%);
+    }
+
+    .illustration-float {
+        animation: float 25s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-40px) rotate(8deg); }
+    }
+
+    .section-header {
+        position: relative;
+    }
+    
+    .section-header::after {
+        content: '';
+        position: absolute;
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(to right, #00B4A6, #D4A017);
+        bottom: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .nav-link {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .nav-link:hover {
+        color: #00B4A6;
+        transform: translateY(-2px);
+    }
+
+    .card-hover {
+        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    
+    .card-hover:hover {
+        transform: translateY(-15px) scale(1.03);
+        box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    }
+
+    .illustration {
+        filter: contrast(1.1) brightness(1.05);
+        transition: all 0.5s ease;
+    }
