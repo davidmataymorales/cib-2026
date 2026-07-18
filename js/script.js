@@ -206,9 +206,11 @@ function setupKeyboard() {
 // Inicialización de todo 
 function init() {
     initializeTailwind()
-    renderAreas()
-    renderSpeakers()
-    renderFAQs()
+
+    if (document.getElementById("areas-grid")) renderAreas();
+    if (document.getElementById("speakers-grid")) renderSpeakers();
+    if (document.getElementById("faq-container")) renderFAQs();
+
     startCountdown()
     setupKeyboard()
     
