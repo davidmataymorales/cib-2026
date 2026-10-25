@@ -178,6 +178,22 @@ function startCountdown() {
     setInterval(updateCountdown, 60000);
 }
 
+window.addEventListener('scroll', function() {
+  const logo = document.querySelector('.logo');
+  
+  // Posición actual del scroll
+  const scrollTop = window.scrollY;
+  // Altura total de la página menos la altura visible de la pantalla
+  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+  
+  // Condición: visible solo si has bajado más de 250px y te falta más de 50px para llegar al final
+  if (scrollTop > 250 && (scrollHeight - scrollTop) > 250) {
+    logo.classList.add('visible');
+  } else {
+    logo.classList.remove('visible');
+  }
+});
+
 // Render del menú del celular
 function toggleMobileMenu() {
     const menu = document.getElementById("mobile-menu")

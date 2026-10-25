@@ -18,61 +18,39 @@
     <link rel="stylesheet" href="css/styles.css">
 
 </head>
-<body class="tail-container bg-[#F8F5F0] text-[#1F2937] overflow-x-hidden">
+<body class="tail-container bg-white text-[#1F2937] overflow-x-hidden">
 
-    <!-- NAVBAR -->
-    <nav class="bg-white/95 backdrop-blur-md border-b border-[#E5D9C8] fixed w-full z-50 transition-all duration-300">
-        <div class="max-w-screen-2xl mx-auto">
-            <div class="px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-                
-                <!-- Logo -->
-                <div class="flex items-center gap-x-2">
-                    <div>
-                        <a href="https://boliviainnova.com" class="heading-font text-2xl sm:text-3xl font-bold tracking-tighter text-[#0A3D4A]">BOLIVIA</a>
-                        <a href="https://boliviainnova.com" class="heading-font text-2xl sm:text-3xl font-bold tracking-tighter text-[#00B4A6]">INNOVA</a>
-                    </div>
-                </div>
-
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
-                    <a href="#nosotros" onclick="navigateToSection('nosotros')" class="nav-link text-[#1F2937]">Quiénes somos</a>
-                    <a href="#trabajo" onclick="navigateToSection('trabajo')" class="nav-link text-[#1F2937]">Qué hacemos</a>
-                    <a href="#areas" onclick="navigateToSection('areas')" class="nav-link text-[#1F2937]">Áreas temáticas</a>
-                    <a href="#ponentes" onclick="navigateToSection('ponentes')" class="nav-link text-[#1F2937] hidden">Ponentes</a>
-                    <a href="#programa" onclick="navigateToSection('programa')" class="nav-link text-[#1F2937] hidden">Programa</a>
-                    <a href="#registro" onclick="navigateToSection('registro')" class="nav-link text-[#1F2937]">Registro</a>
-                </div>
-
-                <!-- Botones lado derecho -->
-                <div class="flex items-center gap-x-3">
-                    <!-- Botón Registrarse Oculto en Móvil -->
-                    <button onclick="window.location.href='#registro'" 
-                            class="hidden sm:flex px-5 py-2.5 bg-[#0A3D4A] hover:bg-[#1F2937] text-white text-sm font-semibold rounded-2xl transition-all items-center gap-x-2">
-                        <i class="fa-solid fa-ticket"></i>
-                        <span>Registrarse</span>
-                    </button>
-
-                    <!-- Menú hamburguesa -->
-                    <button onclick="toggleMobileMenu()" 
-                            class="md:hidden w-10 h-10 flex items-center justify-center text-2xl text-[#0A3D4A]">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                </div>
-            </div>
+    <div class="nav-bar bg-white/95" id="navbar">
+        <nav class="wrap nav" aria-label="Principal">
+        <a class="brand logo" href="#inicio"><span style="font-weight:600;letter-spacing:0">Grupo</span> B<span class="c-r">O</span>LIVIA <span class="c-y">I</span>NN<span class="c-g">O</span>VA</a>
+        
+        
+        <div class="menu hidden md:flex">
+            <a class="nl" href="#ejes">Ejes</a>
+            <a class="nl" href="#convocatoria">Convocatoria</a>
+            <a class="nl" href="#programa">Programa</a>
+            <a class="nl" href="#inscripcion">Inscripción</a>
+            <a class="nl" href="#contacto">Contacto</a>
         </div>
 
-        <!-- Mobile Menu -->
+        <button onclick="toggleMobileMenu()" 
+                class="md:hidden">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="px-8 py-8 flex flex-col gap-y-6 text-lg">
-                <a href="#nosotros" onclick="navigateToSection('nosotros');toggleMobileMenu()" class="nav-link">Quienes somos</a>
-                <a href="#trabajo" onclick="navigateToSection('trabajo');toggleMobileMenu()" class="nav-link">Qué hacemos</a>
-                <a href="#areas" onclick="navigateToSection('areas');toggleMobileMenu()" class="nav-link">Áreas temáticas</a>
-                <a href="#ponentes" onclick="navigateToSection('ponentes');toggleMobileMenu()" class="nav-link hidden">Ponentes</a>
-                <a href="#programa" onclick="navigateToSection('programa');toggleMobileMenu()" class="nav-link hidden">Programa</a>
-                <a href="#registro" onclick="navigateToSection('registro');toggleMobileMenu()" class="nav-link">Registro</a>
+            <div class="fixed top-4 right-4 z-50 flex flex-col gap-2 bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-xl border border-slate-200">
+                <a onclick="navigateToSection('ejes');toggleMobileMenu()" class="nav-link nl" href="#ejes">Ejes</a>
+                <a onclick="navigateToSection('convocatoria');toggleMobileMenu()" class="nav-link nl" href="#convocatoria">Convocatoria</a>
+                <a onclick="navigateToSection('programa');toggleMobileMenu()" class="nav-link nl" href="#programa">Programa</a>
+                <a onclick="navigateToSection('inscripcion');toggleMobileMenu()" class="nav-link nl" href="#inscripcion">Inscripción</a>
+                <a onclick="navigateToSection('contacto');toggleMobileMenu()" class="nav-link nl" href="#contacto">Contacto</a>
             </div>
         </div>
-    </nav>
+
+        </nav>
+    </div>
+
 
     <!-- HERO -->
     <header id="hero" class="hero items-center relative overflow-hidden">
@@ -84,13 +62,13 @@
             class="absolute top-20 right-10 w-64 opacity-10 illustration-float hidden sm:block" style="animation-delay: 8s;">
 
         <!-- Imagen Banner Pegada al Borde Derecho (Absoluta al Header) -->
-        <div class="hidden xl:block absolute right-0 top-13 h-[95%] w-[45%] pointer-events-none z-0 overflow-hidden">
-            <img src="assets/Banner.png" alt="Gregor Mendel" class="w-full h-full object-cover">
+        <div class="hidden xl:block absolute right-0 h-full w-[45%] pointer-events-none z-0 overflow-hidden">
+            <img src="assets/Banner.png" alt="Banner" class="w-full h-full object-cover">
         </div>        
 
 
 	<!-- Contenido principal -->
-        <div class="flex-1 flex pt-20 pb-8 md:pt-24 md:pb-12">
+        <div class="flex-1 flex pb-8 md:pb-12">
             <div class="max-w-screen-xl mx-auto pl-4 sm:pl-8 relative z-5">
                 <div class="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
                     
@@ -122,11 +100,11 @@
                         
                         <!-- Imagen Gregor Mendel Solo Móvil-->
                         <div class="relative sm:hidden justify-center mb-10">
-                            <img src="assets/page1.png" alt="Gregor Mendel" class="w-full rounded-3xl shadow-2xl">
+                            <img src="assets/Banner.png" alt="Banner" class="w-full">
                         </div>
 
                         <!-- Botones -->
-                        <div class="flex flex-col sm:flex-row gap-4 mb-5">
+                        <div class="flex flex-col sm:flex-row gap-4 mb-5 pr-5">
                             <button onclick="document.getElementById('registro').scrollIntoView({ behavior: 'smooth' })" 
                                     class="px-8 py-4 bg-[#D4A017] text-[#0A3D4A] text-lg font-semibold rounded-3xl transition-all flex items-center justify-center gap-x-3">
                                 <span>Inscribirse</span>
@@ -142,30 +120,6 @@
                         <div class="mb-8">
                             <a class="link-u" href="#convocatoria"> <u>Enviar un resumen hasta el 15 de noviembre</u></a>
                         </div>
-                        
-
-                        <!-- Countdown 
-                        <div class="flex justify-center md:justify-start gap-x-6 md:gap-x-10 text-white mt-6 md:mt-0">
-                            <div class="text-center">
-                                <div id="days" class="text-4xl sm:text-5xl md:text-6xl font-mono font-bold"></div>
-                                <div class="text-[10px] sm:text-xs tracking-widest uppercase mt-1">Días</div>
-                            </div>
-                            <div class="h-10 sm:h-12 w-px bg-white/30 self-end mb-1"></div>
-                            
-                            <div class="text-center">
-                                <div id="hours" class="text-4xl sm:text-5xl md:text-6xl font-mono font-bold"></div>
-                                <div class="text-[10px] sm:text-xs tracking-widest uppercase mt-1">Horas</div>
-                            </div>
-                            <div class="h-10 sm:h-12 w-px bg-white/30 self-end mb-1"></div>
-                            
-                            <div class="text-center">
-                                <div id="minutes" class="text-4xl sm:text-5xl md:text-6xl font-mono font-bold"></div>
-                                <div class="text-[10px] sm:text-xs tracking-widest uppercase mt-1">Minutos</div>
-                            </div>
-                        </div>
-                        -->
-
-
                     </div>
 
                     <!-- Columna derecha -->
@@ -176,7 +130,7 @@
     </header>
 
     <section class="facts" aria-label="Datos del congreso">
-        <div class="wrap facts-grid">
+        <div class="wrap facts-grid text-center md:text-left">
             <div class="fact" style="--d:0ms"><b>400</b><span>participantes presenciales</span></div>
             <div class="fact" style="--d:80ms"><b>15–20</b><span>ponentes nacionales e internacionales</span></div>
             <div class="fact" style="--d:160ms"><b>3 ejes</b><span>biomedicina, ecología y agricultura, emprendimiento e industria</span></div>
@@ -184,179 +138,54 @@
         </div>
     </section>
 
-    <!-- SOBRE NOSOTROS -->
-    <section id="nosotros" class="py-12 md:py-16 lg:py-20 px-0 lg:px-8 bg-white">
-        <div class="max-w-screen-2xl mx-auto px-8">
-            <div class="grid xl:grid-cols-12 gap-8 lx:gap-16 items-center">
-                <div class="xl:col-span-5">
-                <div class="sticky top-20">
-                    <span class="inline-block px-4 py-1 bg-[#F0EDE4] text-[#0A3D4A] text-xs tracking-widest font-medium rounded-3xl">4º EDICIÓN - 2026</span>
-                    
-                    <h2 class="heading-font text-4xl sm:text-6xl md:text-7xl font-bold leading-none mt-6 mb-4 md:mb-8 text-[#0A3D4A]">
-                        Uniendo ciencia, innovación y sostenibilidad en Bolivia
-                    </h2>
 
-                    <div class="h-px w-20 bg-gradient-to-r from-[#00B4A6] to-transparent"></div>
-
-                    <div class="max-w-xl pt-5 xl:hidden">
-                        <p class="text-lg mb-5 leading-relaxed text-[#374151]">
-                            Bolivia Innova es una plataforma que impulsa la bioinnovación en Bolivia. Organizamos el Congreso Internacional de 
-                            Biotecnología, conectamos investigadores, emprendedores y tomadores de decisiones, y fomentamos soluciones basadas 
-                            en nuestra megadiversidad.
-                        </p>
-                        <p class="text-lg leading-relaxed text-[#374151]">
-                            El Congreso Internacional de Biotecnología (CIB 2026) es uno de los eventos científicos más importantes de Bolivia 
-                            y la región andina en ciencia de la vida. Reunimos investigadores, empresarios, policymakers y estudiantes para 
-                            discutir el rol estratégico y fundamental de la biotecnología en la solución de los grandes desafíos de América Latina.
-                        </p>
-                        <div class="grid grid-cols-3 gap-3 sm:gap-6 md:gap-8 mt-12 md:mt-16">
-                            <div class="text-center items-center">
-                                <div class="text-2xl sm:text-3xl md:text-4xl font-mono font-semibold text-[#00B4A6] leading-none whitespace-nowrap">15-20</div>
-                                <div class="text-xs sm:text-sm uppercase tracking-widest mt-2 text-[#374151]">Ponentes</div>
-                            </div>
-                            
-                            <div class="text-center items-center">
-                                <div class="text-2xl sm:text-3xl md:text-4xl font-mono font-semibold text-[#00B4A6] leading-none">6</div>
-                                <div class="text-xs hidden [@media(min-width:475px)]:block sm:text-sm uppercase tracking-widest mt-2 text-[#374151]">Ejes temáticos</div>
-                                <div class="text-xs [@media(min-width:475px)]:hidden sm:text-sm uppercase tracking-widest mt-2 text-[#374151]">Temas</div>
-                            </div>
-                            
-                            <div class="text-center items-center">
-                                <div class="text-2xl sm:text-3xl md:text-4xl font-mono font-semibold text-[#00B4A6] leading-none whitespace-nowrap">150-200</div>
-                                <div class="text-xs sm:text-sm uppercase tracking-widest mt-2 text-[#374151]">Participantes</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                
-                <div class="md:col-span-7 max-w-xl hidden xl:block">
-                    <p class="text-lg mb-5 leading-relaxed text-[#374151]">
-                        Bolivia Innova es una plataforma que impulsa la bioinnovación en Bolivia. Organizamos el Congreso Internacional de 
-                        Biotecnología, conectamos investigadores, emprendedores y tomadores de decisiones, y fomentamos soluciones basadas 
-                        en nuestra megadiversidad.
-                    </p>
-                    <p class="text-lg leading-relaxed text-[#374151]">
-                        El Congreso Internacional de Biotecnología (CIB 2026) es uno de los eventos científicos más importantes de Bolivia 
-                        y la región andina en ciencia de la vida. Reunimos investigadores, empresarios, policymakers y estudiantes para 
-                        discutir el rol estratégico y fundamental de la biotecnología en la solución de los grandes desafíos de América Latina.
-                    </p>
-            
-                    <div class="grid grid-cols-3 gap-4 sm:gap-6 md:gap-8 mt-12 md:mt-16">
-                        <div class="text-center">
-                            <div class="text-3xl sm:text-4xl font-mono font-semibold text-[#00B4A6] leading-none whitespace-nowrap">15-20</div>
-                            <div class="text-xs sm:text-sm uppercase tracking-widest mt-2 text-[#374151]">Ponentes</div>
-                        </div>
-                        
-                        <div class="text-center">
-                            <div class="text-3xl sm:text-4xl font-mono font-semibold text-[#00B4A6] leading-none">6</div>
-                            <div class="text-xs sm:text-sm uppercase tracking-widest mt-2 text-[#374151]">Ejes temáticos</div>
-                        </div>
-                        
-                        <div class="text-center">
-                            <div class="text-2xl sm:text-3xl md:text-4xl font-mono font-semibold text-[#00B4A6] leading-none whitespace-nowrap">150-200</div>
-                            <div class="text-xs sm:text-sm uppercase tracking-widest mt-2 text-[#374151]">Participantes</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section id="por-que" class="wrap section why">
+        <div class="why-copy reveal">
+            <h2 class="why h2">Biodiversidad de sobra, inversión a la cola</h2>
+            <p class="lead">Bolivia tiene la biodiversidad necesaria para una biotecnología propia, pero su último registro de inversión en investigación no llega a un tercio del promedio regional. La brecha es de conocimiento aplicado, no de recursos.</p>
+            <p class="lead" style="max-width:560px">Cerrarla exige hacer visible la investigación nacional, conectarla con la empresa y convertirla en política pública. El congreso reúne en Santa Cruz de la Sierra a científicos, emprendedores, inversionistas, autoridades y estudiantes para avanzar en los tres.</p>
+        </div>
+        <div class="figures">
+            <div class="figure reveal" style="--d:0ms"><b>0,16&nbsp;%</b><span>del PIB invertido en I+D en Bolivia (2009)<sup>1</sup></span></div>
+            <div class="figure reveal" style="--d:90ms"><b>0,60&nbsp;%</b><span>promedio de América Latina y el Caribe (2023)<sup>2</sup></span></div>
+            <div class="figure reveal" style="--d:180ms"><b>15.345</b><span>especies de plantas vasculares registradas<sup>3</sup></span></div>
+            <div class="figure reveal" style="--d:270ms"><b>2.343</b><span>de ellas, endémicas de Bolivia<sup>3</sup></span></div>
         </div>
     </section>
 
 
-    <!-- QUÉ HACEMOS -->
-    <section id="trabajo" class="py-16 md:py-24 bg-[#F8F5F0]">
-        <div class="max-w-screen-2xl mx-auto px-8">
-            <div class="grid md:grid-cols-12 gap-12 lg:gap-16 items-center">
-                
-                <!-- Columna izquierda - Título -->
-                <div class="md:col-span-5">
-                    <div class="sticky top-28 flex flex-col items-start">
-                        <span class="inline-block px-4 py-1 bg-[#F0EDE4] text-[#0A3D4A] text-xs tracking-widest font-medium rounded-3xl">BOLIVIA INNOVA</span>
-                        <h2 class="heading-font text-5xl md:text-6xl font-bold leading-none mt-6 mb-8 text-[#0A3D4A]">
-                            Qué hacemos
-                        </h2>
-                        <div class="h-px w-20 bg-gradient-to-r from-[#00B4A6] to-transparent"></div>
-                    </div>
-                </div>
-
-                <!-- Columna derecha - Texto -->
-                <div class="md:col-span-7 max-w-2xl space-y-6">
-                    <p class="text-lg leading-relaxed text-[#374151]">
-                        Nuestro trabajo va más allá de la organización del Congreso Internacional de Biotecnología en Bolivia:
-                    </p>
-                    <ul class="space-y-4 text-lg leading-relaxed text-[#374151]">
-                        <li class="flex items-start gap-3">
-                            <span class="inline-block mt-2.5 h-1.5 w-1.5 rounded-full bg-[#00B4A6] shrink-0"></span>
-                            <span>
-                                Somos <b>creadores de espacios de alto nivel para el intercambio científico</b>, donde la biodiversidad boliviana se encuentra con la vanguardia tecnológica global.
-                            </span>
-                        </li>
-
-                        <li class="flex items-start gap-3">
-                            <span class="inline-block mt-2.5 h-1.5 w-1.5 rounded-full bg-[#00B4A6] shrink-0"></span>
-                            <span>
-                                <b>Generamos espacios de discusión para alimentar la educación económica</b> y la relación entre biotecnología y desarrollo sostenible para transformar el conocimiento en impacto real.
-                            </span>
-                        </li>
-
-                        <li class="flex items-start gap-3">
-                            <span class="inline-block mt-2.5 h-1.5 w-1.5 rounded-full bg-[#00B4A6] shrink-0"></span>
-                            <span>
-                                <b>Construimos puentes entre academia, sector privado y gobierno</b> para posicionar a Bolivia en la bioeconomía latinoamericana.
-                            </span>
-                        </li>
-                    </ul>                  
-                </div>
-                
-            </div>
-        
-            <!-- Cuadros temáticos -->
-            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 mt-20">
-                <!-- Card 1 -->
-                <div class="group items-center sm:items-start text-center sm:text-left">
-                    <div class="text-5xl mb-4 transition-transform group-hover:scale-110 inline-block">🌿</div>
-                    <h3 class="text-2xl font-semibold heading-font mb-3">Congresos y Encuentros</h3>
-                </div>
-                
-                <!-- Card 2 -->
-                <div class="group items-center sm:items-start text-center sm:text-left">
-                    <div class="text-[#0A3D4A] text-5xl mb-4 transition-transform group-hover:scale-110 inline-block">🔬</div>
-                    <h3 class="text-2xl font-semibold heading-font mb-3">Impulso a la Investigación</h3>
-                </div>
-                
-                <!-- Card 3 -->
-                <div class="group items-center sm:items-start text-center sm:text-left">
-                    <div class="text-5xl mb-4 transition-transform group-hover:scale-110 inline-block">💼</div>
-                    <h3 class="text-2xl font-semibold heading-font mb-3">Apoyo al emprendimiento</h3>
-                </div>
-                
-                <!-- Card 4 -->
-                <div class="group items-center sm:items-start text-center sm:text-left">
-                    <div class="text-5xl mb-4 transition-transform group-hover:scale-110 inline-block">🌎</div>
-                    <h3 class="text-2xl font-semibold heading-font mb-3">Conexión Regional</h3>
-                </div>
-            </div>
-
-            <!-- Cita inferior -->
-            <div class="mt-16 pt-8 border-t border-[#E5D9C8]">
-                <p class="italic text-[#64748B] text-center md:text-left">
-                    “La verdadera innovación nace cuando la ciencia antigua se encuentra con las preguntas del futuro.”
-                </p>
-            </div>
+    <section id="ejes" class="wrap section bg-white">
+        <div class="head-row">
+            <h2 class="h2">Tres ejes, seis áreas</h2>
+            <p>El programa combina exposición científica con espacios de negocio, formación y encuentro.</p>
+        </div>
+        <div class="axes text-center md:text-left">
+            <div class="axis a1" style="--d:0ms"><span>Eje 1</span><h3>Biomedicina</h3></div>
+            <div class="axis a2" style="--d:100ms"><span>Eje 2</span><h3>Ecología y agricultura</h3></div>
+            <div class="axis a3" style="--d:200ms"><span>Eje 3</span><h3>Emprendimiento e industria</h3></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="areas-grid">
+            <!-- Populated by JS -->
         </div>
     </section>
 
-    <!-- ÁREAS TEMÁTICAS -->
-    <section id="areas" class="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div class="max-w-screen-2xl mx-auto px-8">
-            <div class="text-center mb-16">
-                <span class="text-[#00B4A6] font-medium">EXPLORA</span>
-                <h2 class="heading-font text-4xl sm:text-6xl md:text-7xl font-bold text-[#0A3D4A] mt-3">Ejes Temáticos</h2>
+    <section id="convocatoria" class="cfp">
+        <div class="wrap cfp-in">
+            <div class="head-row">
+            <div style="display:flex;flex-direction:column;gap:16px;max-width:680px">
+                <h2 class="h2">Convocatoria de trabajos</h2>
+                <p class="lead">Priorizamos trabajos originales e inéditos, relevantes para la biotecnología y explicados con claridad: el público incluye estudiantes, empresas, gestores y medios.</p>
             </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="areas-grid">
-                <!-- Populated by JS -->
+            <div class="deadline">
+                <b>15 de noviembre</b>
+                <span>Fecha límite para enviar resúmenes</span>
+                <a class="btn" href="#" style="margin-top:8px">Enviar un resumen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+            </div>
+            </div>
+            <div class="rules">
+            <div class="rule" style="--d:0ms"><h3>Resúmenes</h3><p>En español y en .docx, con la plantilla oficial. Título de hasta 20 palabras, hasta 8 autores y un cuerpo de 250–300 palabras: introducción y objetivos, materiales y métodos, resultados y conclusiones. Cierra con “¿Por qué importa?”, de 40–60 palabras en lenguaje accesible.</p></div>
+            <div class="rule" style="--d:100ms"><h3>Trabajos ya publicados</h3><p>Se admiten si indicas la referencia completa de la publicación original (autores, título, revista o libro, año, volumen, páginas y DOI) y si aportan valor a la discusión científica, la transferencia de conocimiento o el debate interdisciplinario.</p></div>
+            <div class="rule" style="--d:200ms"><h3>Pósteres</h3><p>A0 vertical, en español, con un máximo de 800 palabras y 4–6 figuras o tablas, legible a 1,5–2 metros. Cada presentador puede enviar hasta dos resúmenes y debe estar inscrito antes de la fecha límite.</p></div>
             </div>
         </div>
     </section>
@@ -404,90 +233,84 @@
         </div>
     </section>
 
-    <!-- REGISTRO -->
-    <section id="registro" class="py-12 md:py-16 lg:py-20 px-2 sm:px-6 lg:px-8 bg-[#0A3D4A] text-white">
-        <div class="max-w-screen-2xl mx-auto px-2 sm:px-6 lg:px-8">
-            <div class="max-w-4xl mx-auto text-center mb-12">
-                <h2 class="heading-font text-4xl sm:text-5xl md:text-6xl font-bold leading-none">Inscripciones Abiertas</h2>
-                <p class="text-xl text-white/80 mt-4">Descuento <span class="text-[#D4A017] font-bold">20% Early Bird</span> hasta el 30 de septiembre 2026</p>
+    <section id="programa" class="wrap section prog">
+        <div class="prog-copy">
+            <h2 class="h2">Programa y ponentes</h2>
+            <p class="lead">Tres días, del jueves 10 al sábado 12 de diciembre, con 15–20 ponentes nacionales e internacionales. Publicaremos el programa completo y la lista de ponentes en esta página.</p>
+            <p>Presencial en Santa Cruz de la Sierra, con transmisión en vivo. En español e inglés.</p>
+        </div>
+        <div class="formats" style="--d:120ms">
+            <h3>Formatos</h3>
+            <ul>
+            <li>Conferencias magistrales</li>
+            <li>Simposios especializados</li>
+            <li>Comunicaciones orales</li>
+            <li>Sesión de pósteres con premio</li>
+            <li>Feria de start-ups y demo day</li>
+            <li>Talleres prácticos</li>
+            <li>Mentorías</li>
+            <li>Reuniones bilaterales de networking</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="inscripcion" class="wrap section">
+        <div class="head-row">
+            <h2 class="h2">Inscripción</h2>
+            <p>Para presentar un trabajo, el autor presentador debe inscribirse antes del 15 de noviembre.</p>
+        </div>
+        <div class="prices">
+            <div class="price p-pro" style="--d:0ms">
+            <h3>Profesionales</h3>
+            <b>Bs&nbsp;400</b>
+            <a class="btn" href="#">Inscribirse como profesional <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
             </div>
+            <div class="price p-stu" style="--d:100ms">
+            <h3>Estudiantes</h3>
+            <b>Bs&nbsp;200</b>
+            <a class="btn dark" href="#">Inscribirse como estudiante <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+            </div>
+        </div>
+        <p class="note">Patrocinios y alianzas: escríbenos a <strong>congresoboliviainnova@gmail.com</strong>.</p>
+    </section>
+
+
+    <section id="organizan" class="wrap section">
+        <h2 class="h2">Organizan</h2>
+        <div class="org">
+            <img src="data:image/webp;base64,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" width="150" height="150" alt="Universidad Católica Boliviana">
+            <p>Facultad de Biotecnología, Universidad Católica San Pablo, Sede Santa Cruz, y el grupo Bolivia Innova.</p>
+        </div>
+        <div class="partners">
+
             
-            <div class="max-w-4xl mx-auto bg-white/10 backdrop-blur-xl rounded-3xl p-4 sm:p-6 md:p-12">
-                <table class="w-full">
-                    <thead>
-                        <tr class="border-b border-white/20">
-                            <th class="py-6 text-left font-bold">Categoría</th>
-                            <th class="py-6 text-right font-bold"><span class="hidden sm:inline">Valor con descuento </span><span class="sm:hidden">Descuento</span><br class="md:hidden">Early Bird</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-white/20"> 
-                        <tr>
-                            <td class="py-7 text-sm md:text-base font-medium text-white/90">Profesionales</td>
-                            <td class="text-sm md:text-base text-right sm:pr-7"><span class="line-through text-white/50">Bs. 350</span><span class="pl-3 sm:pl-5 font-bold text-[#D4A017]"><span class="hidden sm:inline">Bs. </span>280</span></td>
-                        </tr>
-                        <tr>
-                            <td class="py-7 text-sm md:text-base font-medium text-white/90">Profesionales <br class="sm:hidden"> (modalidad <span class="font-bold">virtual</span>)</td>
-                            <td class="text-sm md:text-base text-right sm:pr-7"><span class="line-through text-white/50">Bs. 250</span><span class="pl-3 sm:pl-5 font-bold text-[#D4A017]"><span class="hidden sm:inline">Bs. </span>200</span></td>
-                        </tr>
-                        <tr>
-                            <td class="py-7 text-sm md:text-base font-medium text-white/90">Estudiantes</td>
-                            <td class="text-sm md:text-base text-right sm:pr-7"><span class="line-through text-white/50">Bs. 250</span><span class="pl-3 sm:pl-5 font-bold text-[#D4A017]"><span class="hidden sm:inline">Bs. </span>200</span></td>
-                        </tr>
-                        <tr>
-                            <td class="py-7 text-sm md:text-base font-medium text-white/90">Estudiantes <br class="sm:hidden">(modalidad <span class="font-bold">virtual</span>)</td>
-                            <td class="text-sm md:text-base text-right sm:pr-7"><span class="line-through text-white/50">Bs. 150</span><span class="pl-3 sm:pl-5 font-bold text-[#D4A017]"><span class="hidden sm:inline">Bs. </span>120</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <div class="mt-12 text-center">
-                    <button onclick="window.location.href='./pages/enrollment.html'" 
-                            class="bg-gradient-to-r from-[#D4A017] to-amber-500 hover:from-amber-400 hover:to-yellow-400 text-[#0A3D4A] px-8 sm:px-16 py-6 rounded-3xl text-base md:text-xl font-semibold transition-all">
-                        Completar Registro
-                    </button>
+            <h3>Instituciones participantes</h3>
+            <div class="carousel">
+                <div class="logos_track">
+                    <img src="assets/SOBOIN.png" alt="SoBoIn">
+                    <img src="assets/UMSS.png" alt="UMSS">
+                    <img src="assets/UniFranz.png" alt="Unifranz">
+                    <img src="assets/UAGRM.png" alt="UAGRM">
+                    <img src="assets/UPB.png" alt="UPB">
+                    <img src="assets/SOCEB.png" alt="SOCEB">
+                    <img src="assets/SOBOIN.png" alt="SoBoIn">
+                    <img src="assets/UMSS.png" alt="UMSS">
+                    <img src="assets/UniFranz.png" alt="Unifranz">
+                    <img src="assets/UAGRM.png" alt="UAGRM">
+                    <img src="assets/UPB.png" alt="UPB">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ORGANIZADORES Y PATROCINADORES -->
-    <section class="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div class="max-w-screen-2xl mx-auto px-8">
-            <div class="grid md:grid-cols-2 gap-20">
-                <!-- Organizadores -->
-                <div>
-                    <h3 class="uppercase text-xs tracking-[2px] mb-6 text-[#64748B]">Organizadores</h3>
-                    <div class="flex flex-wrap gap-8 items-center opacity-75">
-                        <div class="text-3xl font-bold text-[#0A3D4A]">UCB Santa Cruz</div>
-                        <div class="text-3xl font-bold text-[#0A3D4A]">UMSS</div>
-                        <div class="text-3xl font-bold text-[#0A3D4A]">Bolivia Innova</div>
-                    </div>
-                </div>
-                
-                <!-- Patrocinadores -->
-                <div>
-                    <h3 class="uppercase text-xs tracking-[2px] mb-6 text-[#64748B]">Patrocinadores</h3>
-                    <div class="grid grid-cols-4 gap-8 grayscale opacity-60">
-                        <div class="h-12 bg-gray-300 rounded-xl flex items-center justify-center text-xs">Sponsor</div>
-                        <div class="h-12 bg-gray-300 rounded-xl flex items-center justify-center text-xs">Sponsor</div>
-                        <div class="h-12 bg-gray-300 rounded-xl flex items-center justify-center text-xs">Sponsor</div>
-                        <div class="h-12 bg-gray-300 rounded-xl flex items-center justify-center text-xs">Sponsor</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Preguntas Frecuentes -->
-    <section class="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-[#F8F5F0]">
-        <div class="max-w-xl mx-auto">
-            <div class="max-w-xl mx-auto">
-                <h2 class="heading-font text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-16">Preguntas Frecuentes</h2>
-                
-                <div class="space-y-4" id="faq-container">
-                    <!-- JS populated -->
-                </div>
-            </div>
+    <section id="preguntas" class="wrap section faq pb-20">
+        <h2 class="h2">Preguntas frecuentes</h2>
+        <div class="faq-list" style="--d:100ms">
+            <details><summary>¿Hasta cuándo puedo enviar un resumen?<span class="sign" aria-hidden="true">+</span></summary><div class="ans"><p>Hasta el 15 de noviembre de 2026, a través de la plataforma de envío y con la plantilla oficial.</p></div></details>
+            <details><summary>¿Puedo presentar un trabajo ya publicado?<span class="sign" aria-hidden="true">+</span></summary><div class="ans"><p>Sí, siempre que indiques la referencia completa de la publicación original y que el trabajo sea relevante para el congreso. Damos prioridad a los trabajos inéditos.</p></div></details>
+            <details><summary>¿En qué idioma se presenta?<span class="sign" aria-hidden="true">+</span></summary><div class="ans"><p>Resúmenes y pósteres van en español. Las sesiones del congreso son en español e inglés.</p></div></details>
+            <details><summary>¿Cuántos resúmenes puedo enviar?<span class="sign" aria-hidden="true">+</span></summary><div class="ans"><p>Hasta dos por autor presentador, que debe estar inscrito antes de la fecha límite.</p></div></details>
+            <details><summary>¿Se puede seguir a distancia?<span class="sign" aria-hidden="true">+</span></summary><div class="ans"><p>Sí. El congreso es presencial en Santa Cruz de la Sierra, con transmisión en vivo.</p></div></details>
         </div>
     </section>
 
@@ -497,24 +320,17 @@
             <div class="grid md:grid-cols-12 gap-y-16">
                 <!-- Logo / Descripción -->
                 <div class="md:col-span-5">
-                    <div class="flex items-center gap-x-3 mb-8">
-                        <span class="heading-font text-4xl font-bold tracking-tighter">BOLIVIA INNOVA</span>
-                    </div>
-                    <p class="max-w-xs text-white/70">
-                        Congreso Internacional de Biotecnología<br>
-                        Santa Cruz, Bolivia • 10 al 12 de diciembre 2026
-                    </p>
+                    <a class="brand_foot"> B<span class="c-r">O</span>LIVIA <span class="c-y">I</span>NN<span class="c-g">O</span>VA</a>
                 </div>
                 
                 <!-- Navegación -->
                 <div class="md:col-span-2">
                     <div class="uppercase text-xs tracking-widest mb-6 text-white/60">Navegación</div>
                     <div class="space-y-3 text-sm">
-                        <a href="#nosotros" class="block hover:text-[#00B4A6]">Quienes somos</a>
-                        <a href="#trabajo" class="block hover:text-[#00B4A6]">Qué hacemos</a>
-                        <a href="#areas" class="block hover:text-[#00B4A6]">Áreas temáticas</a>
-                        <a href="#ponentes" class="block hover:text-[#00B4A6]">Ponentes</a>
+                        <a href="#convocatoria" class="block hover:text-[#00B4A6]">Convocatoria</a>
                         <a href="#programa" class="block hover:text-[#00B4A6]">Programa</a>
+                        <a href="#inscripcion" class="block hover:text-[#00B4A6]">Inscripción</a>
+                        <a href="#contacto" class="block hover:text-[#00B4A6]">Contacto</a>
                     </div>
                 </div>
                 
@@ -526,7 +342,7 @@
                             congresoboliviainnova@gmail.com
                         </a>
                         <a href="tel:+33687943914" class="block hover:text-[#00B4A6]">
-                            +33 0687943914
+                            +33 6 87 94 39 14
                         </a>
                     </div>
                 </div>
@@ -535,17 +351,28 @@
                 <div class="md:col-span-2">
                     <div class="uppercase text-xs tracking-widest mb-6 text-white/60">Síguenos</div>
                     <div class="flex gap-x-6 text-3xl">
-                        <a href="https://www.youtube.com/channel/UCMcsIRQ9WqEVp-uWhcqkE1A/videos" class="hover:text-[#00B4A6] transition-colors"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="https://www.linkedin.com/company/congresoboliviainnova/" class="hover:text-[#00B4A6] transition-colors"><i class="fa-brands fa-linkedin"></i></a>
                         <a href="https://www.facebook.com/p/Congreso-Bolivia-Innova-100063959888965/" class="hover:text-[#00B4A6] transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/bolivia_innova/" class="hover:text-[#00B4A6] transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/congresoboliviainnova/" class="hover:text-[#00B4A6] transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com/channel/UCMcsIRQ9WqEVp-uWhcqkE1A/videos" class="hover:text-[#00B4A6] transition-colors"><i class="fa-brands fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
             
             <!-- Línea inferior -->
             <div class="border-t border-white/10 mt-20 pt-8 text-xs flex flex-col md:flex-row justify-between items-center text-white/50">
-                <div>© Bolivia Innova - Congreso Internacional de Biotecnología 2026. Todos los derechos reservados.</div>
+                <div>Fuentes:</div>
                 <div class="mt-4 md:mt-0">Hecho con respeto por la ciencia y la naturaleza</div>
+            </div>
+            <div class="text-xs flex flex-col md:flex-row justify-between items-center text-white/50">
+                <div>1. Banco Mundial, gasto en I+D (% del PIB), Bolivia, 2009.</div>
+                <div class="mt-4 md:mt-0">© 2026 Bolivia Innova</div>
+            </div>
+            <div class="text-xs flex flex-col md:flex-row justify-between items-center text-white/50">
+                <div>2. RICYT, OEI y UNESCO, El estado de la ciencia 2025.</div>
+            </div>
+            <div class="text-xs flex flex-col md:flex-row justify-between items-center text-white/50">
+                <div>3. Jørgensen, Nee y Beck (2014), Catálogo de las plantas vasculares de Bolivia.</div>
             </div>
         </div>
     </footer>

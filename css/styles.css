@@ -5,10 +5,237 @@
         --accent: #00B4A6;
         --gold: #D4A017;
         --coral: #E07A5F;
+
+        --teal-deep: #145F6E;
+        --teal-ink: #0D4652;
+        --teal: #4FB3C4;
+        --blue: #7BA7E8;
+        --yellow: #E8C21A;
+        --coral: #F27A50;
+        --red-letter: #FF6B5E;
+        --green-letter: #4CC764;
+        --ink: #000000;
+        --paper: #FFFFFF;
+        --mist: #EEF5F6;
+        --mist-2: #E2EEF0;
+        --on-teal: #E6F1F3;
+        --on-teal-soft: #CFE6EA;
+        --display: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+        --text: "Source Serif 4", Georgia, "Times New Roman", serif;
+        --ease: cubic-bezier(.2,.7,.2,1);
+        color-scheme: light;
     }
     
     .tail-container {
         font-family: 'Inter', system_ui, sans-serif;
+    }
+
+    /* Añadido del otro css */
+    * {
+        box-sizing: border-box
+    }
+
+    html {
+        scroll-padding-top: 96px
+    }
+
+    body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--text);
+        font-size: 18px;
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased
+    }
+
+    img {
+        max-width: 100%;
+        display: block
+    }
+
+    a {
+        color: var(--teal-deep)
+    }
+
+    a:focus-visible,button:focus-visible,summary:focus-visible {
+        outline: 3px solid var(--yellow);
+        outline-offset: 3px
+    }
+
+    h1,h2,h3,h4 {
+        font-family: var(--display);
+        margin: 0;
+        text-wrap: balance
+    }
+
+    p {
+        margin: 0
+    }
+
+    .wrap {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding-left: max(16px, env(safe-area-inset-left, 0px));
+        padding-right: max(16px, env(safe-area-inset-right, 0px))
+    }
+
+    @media (min-width: 700px) {
+        .wrap {
+            padding-left:max(32px, env(safe-area-inset-left, 0px));
+            padding-right: max(32px, env(safe-area-inset-right, 0px))
+        }
+    }
+
+    .h2 {
+        font-weight: 800;
+        font-size: clamp(36px,4.2vw,58px);
+        line-height: 1.02;
+        letter-spacing: -.03em;
+    }
+
+    .section {
+        padding-block:clamp(88px,11vw,160px) 0}
+
+    .lead {
+        font-size: 20px;
+        line-height: 1.5;
+        max-width: 560px
+    }
+
+    .c-r {
+        color: var(--red-letter)
+    }
+
+    .c-y {
+        color: var(--yellow)
+    }
+
+    .c-g {
+        color: var(--green-letter)
+    }
+
+    /* Botones y Links */
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-family: var(--display);
+        font-weight: 800;
+        font-size: 17px;
+        text-decoration: none;
+        padding: 18px 30px;
+        background: var(--yellow);
+        color: var(--ink);
+    }
+
+    .btn svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .btn:active {
+        transform: translateY(0)
+    }
+
+    .btn.dark {
+        background: var(--ink);
+        color: var(--paper)
+    }
+
+    .link-u {
+        color: white;
+        font-family: var(--display);
+        font-weight: 700;
+        text-underline-offset: 6px
+    }
+
+
+    /* Header y Navbar*/
+    .top {
+        background: white/90;
+        color: black;
+    }
+
+    .nav-bar {
+        position: relative;
+        z-index: 20;
+        background: white/90;
+        position: sticky;
+        top: env(safe-area-inset-top, 0px);
+    }
+
+    .brand {
+        font-family: var(--display);
+        font-weight: 900;
+        font-size: 20px;
+        letter-spacing: -.02em;
+        color: var(--ink);
+        text-decoration: none;
+        line-height: 1;
+    }
+
+    .brand_foot {
+        font-family: var(--display);
+        font-weight: 900;
+        font-size: 40px;
+        letter-spacing: -.02em;
+        color: var(--paper);
+        text-decoration: none;
+        line-height: 1;
+    }
+
+    .nav {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px 32px;
+        padding-block: 18px;
+        background: white/90;
+    }
+
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 4px 26px;
+        font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+    }
+
+    .menu a.nl {
+        color: black;
+        text-decoration: none;
+        padding: 12px 0;
+        position: relative;
+    }
+
+    .menu a.nl:hover::after, .menu a.nl[aria-current="true"]::after {
+        transform: scaleX(1);
+    }
+
+    .menu a.nl::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 6px;
+        height: 2px;
+        background: #0A3D4A;
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+
+    .logo {
+        opacity: 0;
+        transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+        visibility: hidden;
+    }
+
+    .logo.visible {
+        opacity: 1;
+        visibility: visible;
     }
 
     .hero {
@@ -34,18 +261,6 @@
         display: inline-block;
     }
 
-    .c-r {
-        color: #FF6B5E;
-    }
-
-    .c-y {
-        color: #E8C21A;
-    }
-
-    .c-g {
-        color: #4CC764
-    }
-
     .pre {
         font-size: 20px;
         font-weight: 600;
@@ -53,35 +268,14 @@
 
     .bio {
         font-weight: 900;
-        font-size: clamp(50px, 6vw, 90px);
+        font-size: clamp(40px, 6vw, 90px);
         line-height: 1;
         letter-spacing: -.02em;
         color: white;
     }
 
-    .lead{
-        font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
-        font-size: 20px;
-        line-height: 1.5;
-        max-width: 560px;
-    }
-
-    .link-u {
-        font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
-        font-weight: 700;
-        color: white;
-    }
-
     .facts {
         background: #D4A017;
-    }
-
-    .wrap {
-        padding-left: max(32px, env(safe-area-inset-left, 0px));
-        padding-right: max(32px, env(safe-area-inset-right, 0px));
-        max-width: 1280px;
-        margin: 0 auto;
-        min-width: 700px
     }
 
     .facts-grid {
@@ -99,8 +293,420 @@
         gap: 6px;
     }
 
+    .fact b {
+        font-size: 46px;
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -.02em;
+        font-variant-numeric: tabular-nums;
+    }
+    .fact span {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.35;
+    }
+
+    .why {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 48px 64px;
+    }
+    
+    .axes {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        margin-top: 40px;
+    }
+
+    .a1{
+        background: #4FB3C4;
+    }
+
+    .a2{
+        background: #E8C21A;
+    }
+
+    .a3{
+        background: #F27A50;
+    }
+
+    .axis span {
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .axis h3 {
+        font-size: 34px;
+        font-weight: 800;
+        line-height: 1.05;
+        letter-spacing: -.02em;
+    }
+
+    .axis {
+        position: relative;
+        overflow: hidden;
+        padding: 36px 32px 44px;
+        min-height: 240px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 56px;
+        font-family: var(--display);
+    }
+
     .illustration-float {
         animation: float 25s ease-in-out infinite;
+    }
+
+    .why-copy {
+        flex: 1 1 420px;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .figures {
+        flex: 1 1 480px;
+        min-width: 0;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 4px;
+    }
+
+    .figure {
+        background: #4FB3C4;
+        padding: 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .figure b {
+        font-weight: bolder;
+        font-size: clamp(34px, 4vw, 52px);
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -.02em;
+        font-variant-numeric: tabular-nums;
+        color: black;
+    }
+
+    .figure span {
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 1.35;
+        color: black;
+    }
+
+    .head-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 16px 48px;
+    }
+
+    .head-row p {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        unicode-bidi: isolate;
+        max-width: 520px;
+        font-size: 18px;
+    }
+
+    .head-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 16px 48px;
+    }
+
+    .deadline {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+        font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .deadline b {
+        font-weight: 900;
+        font-size: clamp(32px, 3.6vw, 48px);
+        line-height: 1;
+        letter-spacing: -.02em;
+        color: #E8C21A;
+    }
+
+    .deadline span {
+        font-size: 16px;
+        font-weight: 600;
+    }
+    
+    .rules {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 40px 48px;
+    }
+
+    .rule {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .rule h3 {
+        font-size: 21px;
+        font-weight: 800;
+        font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+        margin: 0;
+        text-wrap: balance;
+    }
+
+    .rule p {
+        font-size: 17px;
+        font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+        color: white;
+    }
+
+    .cfp {
+        background: #145F6E;
+        color: #FFFFFF;
+        margin-top: clamp(88px, 11vw, 160px);
+    }
+
+    .cfp-in {
+        padding-block: clamp(80px, 9vw, 120px);
+        display: flex;
+        flex-direction: column;
+        gap: 56px;
+    }
+
+    .prog {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px 64px;
+    }
+
+    .prog-copy {
+        flex: 1 1 420px;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .formats {
+        flex: 1 1 480px;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .formats h3 {
+        font-size: 21px;
+        font-weight: 800;
+        font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+        margin: 0;
+        text-wrap: balance;
+    }
+
+    .formats ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 4px;
+    }
+
+    .formats li {
+        background: #EEF5F6;
+        padding: 18px 20px;
+        font-size: 18px;
+    }
+
+    .formats li:hover {
+        background: #E2EEF0;
+    }
+
+    .prices {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 4px;
+        margin-top: 40px;
+    }
+
+    .p-pro {
+        background: black;
+        color: #F8F5F0;
+    }
+
+    .price {
+        padding: 40px 36px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        font-family: var(--display);
+    }
+
+    .price h3 {
+        font-size: 24px;
+        font-weight: 800;
+    }
+
+    .price b {
+        font-weight: 900;
+        font-size: clamp(56px, 6vw, 88px);
+        line-height: .95;
+        letter-spacing: -.03em;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .p-stu {
+        background: #4FB3C4;
+        color: black;
+    }
+
+    .note {
+        margin-top: 28px;
+        font-size: 17px;
+    }
+
+    .org {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 24px 40px;
+        margin-top: 40px;
+    }
+
+    .org p {
+        max-width: 620px;
+        font-size: 22px;
+        line-height: 1.45;
+        font-family:"Source Serif 4", Georgia, "Times New Roman", serif;
+    }
+
+    .partners {
+        margin-top: 40px;
+        background: #EEF5F6;
+        padding: 32px 36px;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .partners h3{
+        font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+        margin: 0;
+        text-wrap: balance;
+        font-size: 19px;
+        font-weight: 800;
+    }
+
+    .logos {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px 40px;
+    }
+
+    .faq {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px 64px;
+    }
+
+    .faq h2 {
+        flex: 1 1 320px;
+    }
+
+    .faq-list {
+        flex: 2 1 560px;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .faq details {
+        background: #EEF5F6;
+        padding: 0 24px;
+    }
+    
+    .faq summary {
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        padding: 22px 0;
+        font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+        font-size: 19px;
+        font-weight: 700;
+    }
+
+    .faq .sign {
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 1;
+    }
+
+    .faq .ans {
+        display: grid;
+        grid-template-rows: 1fr;
+    }
+
+    .faq .ans p {
+        overflow: hidden;
+        padding: 0 0 24px;
+        font-size: 17px;
+        font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    }
+
+    .carousel {
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        display: flex;
+        mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); /* Opcional: desvanece los bordes */
+    }
+
+    .logos_track {
+        display: flex;
+        gap: 40px; /* Espacio entre los logos */
+        width: max-content;
+        animation: scroll 40s linear infinite; /* Duración: cámbiala a más segundos si quieres que vaya más lento */
+    }
+
+    .logos_track img {
+        height: 70px; /* Ajusta la altura de los logos según necesites */
+        object-fit: contain;
+        opacity: 0.8;
+        transition: opacity 0.3s;
+    }
+
+    .logos_track img:hover {
+        opacity: 1; 
+    }
+
+    /* Animación del bucle */
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
     }
 
     @keyframes float {
@@ -153,3 +759,5 @@
             box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.08);
         }
 
+
+    
