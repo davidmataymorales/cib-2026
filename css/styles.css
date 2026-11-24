@@ -759,5 +759,47 @@
             box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.08);
         }
 
-
     
+    .place {
+        font-size: 1.125rem;          /* text-lg */
+        line-height: 1.75rem;
+        font-weight: 600;             /* font-semibold */
+        color: rgb(255 255 255 / 0.9); /* text-white/90 */
+        max-width: 32rem;             /* max-w-lg */
+        }
+
+        @media (min-width: 640px) {     /* sm: */
+        .place {
+            font-size: 1.25rem;         /* text-xl */
+            line-height: 1.75rem;
+        }
+        }
+
+        @media (min-width: 768px) {     /* md: */
+        .place {
+            font-size: 1.25rem;          /* text-2xl */
+            line-height: 2rem;
+        }
+    }
+
+    .logo-ucb {
+    height: 3rem;       /* ajusta según la proporción de tu logo */
+    width: auto;
+    }
+
+    .separador {
+    width: 1px;
+    height: 2.5rem;
+    background: rgb(0 0 0 / 0.2);
+    }
+
+    @media (max-width: 640px) {
+    .logo-ucb { height: 2.25rem; }
+    .separador { height: 1.75rem; }
+    }
+    
+    .brand-group {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }

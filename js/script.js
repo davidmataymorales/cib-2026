@@ -178,8 +178,9 @@ function startCountdown() {
     setInterval(updateCountdown, 60000);
 }
 
+/*
 window.addEventListener('scroll', function() {
-  const logo = document.querySelector('.logo');
+  const logo = document.querySelectorAll('.logo');
   
   // Posición actual del scroll
   const scrollTop = window.scrollY;
@@ -192,6 +193,16 @@ window.addEventListener('scroll', function() {
   } else {
     logo.classList.remove('visible');
   }
+}); */
+
+const logos = document.querySelectorAll('.logo');
+
+window.addEventListener('scroll', function () {
+  const scrollTop = window.scrollY;
+  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const mostrar = scrollTop > 600 && (scrollHeight - scrollTop) > 600;
+
+  logos.forEach(el => el.classList.toggle('visible', mostrar));
 });
 
 // Render del menú del celular
